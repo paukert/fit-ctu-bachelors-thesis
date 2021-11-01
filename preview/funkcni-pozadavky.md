@@ -1,0 +1,53 @@
+# Funkční požadavky
+- evidence a správa uživatelů
+    - Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do systému. Při registraci bude nutno zadat minimálně e-mailovou adresu, heslo a jméno a příjmení člena klubu. Právě pomocí e-mailové adresy a zadaného hesla bude následně uživatel přistupovat do systému.
+    - Kromě těchto základních údajů bude mít administrátor možnost nastavit a upravovat uživatelovo registrační číslo, stav osobního konta, typ členství – aktivní/pasivní a roli (viz dále).
+    - Každému uživateli bude náležet právě jedna uživatelská role:
+        - registrovaný uživatel
+            - základní uživatelská role, která nemá žádná speciální oprávnění
+            - výčet akcí, které může registrovaný uživatel vykonávat:
+                - přihlašovat a odhlašovat se z tréninků a závodů
+                - psát komentáře k jednotlivým tréninkům, závodům, oznámením a do globálního "chatu" a následně je i upravovat
+                - měnit svou e-mailovou adresu a heslo pro přihlášení do systému
+                - možnost nastavit si e-mailová upozornění na nově přidané události do systému
+        - trenér
+            - role, která náleží trenérům působícím v klubu
+            - oproti roli registrovaný uživatel má právo:
+                - přidávat a následně spravovat tréninky a závody
+                - psát a upravovat svá oznámení
+        - administrátor
+            - má kompletní přístup ke všem funkcionalitám systému
+            - oproti uživatelům s rolí trénér může navíc:
+                - upravovat a mazat veškeré komentáře, oznámení, tréninky a závody
+                - registrovat a spravovat uživatele
+                - odhlašovat a přilašovat uživatele na tréninky a závody (i po termínu přihlášek)
+                - odebírat a přidávat informaci o možnosti vzít auto (i po termínu přihlášek)
+- evidence a správa závodů a tréninků
+    - Dále systém bude umožňovat evidenci a správu tréninků a závodů (událostí). Konkrétně je potřeba mít možnost u každé události evidovat:
+        - název
+        - typ události (trénink nebo závod)
+        - datum a čas události (od kdy se začíná startovat / kdy událost začíná)
+        - místo konání
+        - pořadatel
+        - uzávěrka přihlášek
+        - nepovinně dále:
+            - typ závodu (závod může být zařazen do více soutěží; bude možné nastavit, pouze pokud se jedná o závod)
+            - disciplína
+            - vypsané kategorie
+            - webová stránka
+            - další informace
+    - Samotné zadání události do systému bude umožněno ručním vyplněním všech požadovaných údajů nebo automatickým importem z informačního systému Českého svazu orientačních sportů ORIS (dále jen „IS ORIS“) pomocí unikátního identifikátoru závodu. V případě importu z IS ORIS bude možné též provést automatickou aktualizaci údajů, které se od doby importu v IS ORIS změnily.
+    - Na hlavní stránce systému by se měly zobrazovat závody s nejbližší uzávěrkou přihlášek a nejbližší závody, na které je daný uživatel přihlášený. V zadaných trénincích a závodech bude možné vyhledávat a filtrovat a zadanou událost musí být možno zrušit bez odstraňování ze systému (taková událost bude následně vizuálně od nezrušených událostí odlišena a nebude možné se na ni dále přihlašovat).
+- přihlašování na závody a tréninky
+    - Na událost evidovanou v systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při přihlášení si uživatelé musí navíc vybrat jednu z nabízených kategorií, do které se chtějí přihlásit, a mohou volitelně sdělit, zdali mají možnost jet vlastním autem a svést s sebou i další členy klubu.
+- synchronizace přihlášek
+    - Po uzávěrce přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do IS ORIS přes jeho [API](https://oris.orientacnisporty.cz/API/). Tato možnost bude samozřejmě dostupná pouze pro závody, které jsou v IS ORIS evidované.
+- e-mailová upozornění
+    - Systém bude umožňovat při přidávání události odeslat informační e-mail se základními informacemi o dané události. E-mail bude odeslán pouze těm registrovaným uživatelům, kteří si ve svém nastavení povolili zasílání e-mailových upozornění.
+- oznámení
+    - Trenéři a administátoři systému budou mít možnost vytvořit oznámení, která se budou zobrazovat na hlavní stránce systému.
+- komentáře
+    - Komentáře mohou psát registrovaní uživatelé ke všem tréninkům, závodům, oznámením a také do globálního "chatu". Nejnovější komentáře by se měly zobrazovat (včetně informace kam byly napsány) na hlavní stránce systému.
+
+## Vyřešit, promyslet
+- registraci může provádět pouze administrátor / uživatel se může registrovat sám
