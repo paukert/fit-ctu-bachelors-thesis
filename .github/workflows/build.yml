@@ -1,0 +1,29 @@
+name: Build LaTeX
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build LaTeX
+    runs-on: ubuntu-latest
+    container: texlive/texlive
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Thesis
+        run: latexmk -pdfxe ctufit-thesis.tex
+
+      - name: Rename PDF file
+        run: mv ctufit-thesis.pdf bp-paukert.pdf
+
+      - name: Upload Thesis
+        uses: actions/upload-artifact@v2
+        with:
+          name: bp-paukert.pdf
+          path: bp-paukert.pdf
