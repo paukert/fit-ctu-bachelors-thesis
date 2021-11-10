@@ -74,7 +74,9 @@
 
 \setcounter{secnumdepth}{4} % numbering sections; 4: subsubsection
 
-
+% Added / customized
+\usepackage{enumitem}
+\input{macros/my-item.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOMIZATION of this template END
@@ -233,16 +235,16 @@ W3C & World Wide Web Consortium
 \input{chapters/analysis/functional-requirements.tex}
 \input{chapters/analysis/non-functional-requirements.tex}
 
-\include{text/text} % include `text.tex' from `text/' subdirectory
+\input{text/text} % include `text.tex' from `text/' subdirectory
 
 \appendix\appendixinit % do not remove these two commands
 
-\include{text/appendix} % include `appendix.tex' from `text/' subdirectory
+\input{text/appendix} % include `appendix.tex' from `text/' subdirectory
 
 \backmatter % do not remove this command
 
 \printbibliography % print out the BibLaTeX-generated bibliography list
 
-\include{text/medium} % include `medium.tex' from `text/' subdirectory
+\input{text/medium} % include `medium.tex' from `text/' subdirectory
 
 \end{document}

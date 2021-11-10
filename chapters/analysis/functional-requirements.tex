@@ -1,59 +1,53 @@
 \chapter{Analýza}
 \section{Funkční požadavky}
 
-\begin{enumerate}
-	\item{evidence a~správa uživatelů}
+\begin{enumerate}[label=\textcolor{decoration}{\textbf{F\arabic*}}]
+	\myItem{evidence a~správa uživatelů}
+	Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat minimálně e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí e-mailové adresy a~zadaného hesla bude následně uživatel přistupovat do~systému.
 
-Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat minimálně e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí e-mailové adresy a~zadaného hesla bude následně uživatel přistupovat do~systému.
+	Kromě těchto základních údajů bude mít administrátor možnost nastavit a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství~–~aktivní/pasivní a~roli (viz~sekce \ref{section:role}).
 
-Kromě těchto základních údajů bude mít administrátor možnost nastavit a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství~–~aktivní/pasivní a~roli[TODO: odkaz na sekci].
-
-	\item evidence a~správa závodů a~tréninků
-
-Dále systém bude umožňovat evidenci a~správu tréninků a~závodů (událostí). Konkrétně je potřeba mít možnost u~každé události evidovat:
-\begin{itemize}
-	\item název
-	\item typ události (trénink nebo~závod)
-	\item datum a~čas události (od~kdy se začíná startovat~/~kdy událost začíná)
-	\item místo konání
-	\item pořadatel
-	\item uzávěrka přihlášek
-	\item nepovinně dále:
+	\myItem{evidence a~správa závodů a~tréninků}
+	Dále systém bude umožňovat evidenci a~správu tréninků a~závodů (událostí). Konkrétně je potřeba mít možnost u~každé události evidovat:
 	\begin{itemize}
-		\item typ závodu (závod může být zařazen do~více soutěží; bude možné nastavit, pouze pokud se jedná o~závod)
-		\item disciplína
-		\item vypsané kategorie
-		\item webová stránka
-		\item další informace
+		\item název
+		\item typ události (trénink nebo~závod)
+		\item datum a~čas události (od~kdy se začíná startovat~/~kdy událost začíná)
+		\item místo konání
+		\item pořadatel
+		\item uzávěrka přihlášek
+		\item nepovinně dále:
+		\begin{itemize}
+			\item typ závodu (závod může být zařazen do~více soutěží; bude možné nastavit, pouze pokud se jedná o~závod)
+			\item disciplína
+			\item vypsané kategorie
+			\item webová stránka
+			\item další informace
+		\end{itemize}
 	\end{itemize}
-\end{itemize}
 
-Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů ORIS (dále jen „IS~ORIS“) pomocí unikátního identifikátoru závodu. V~případě importu z~IS~ORIS bude možné též provést automatickou aktualizaci údajů, které se od~doby importu v~IS~ORIS změnily.
+	Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů ORIS (dále jen „IS~ORIS“) pomocí unikátního identifikátoru závodu. V~případě importu z~IS~ORIS bude možné též provést automatickou aktualizaci údajů, které se od~doby importu v~IS~ORIS změnily.
 
-Na~hlavní stránce systému by se měly zobrazovat závody s~nejbližší uzávěrkou přihlášek a~nejbližší závody, na~které je daný uživatel přihlášený. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému (taková událost bude následně vizuálně od~nezrušených událostí odlišena a~nebude možné se na~ni dále přihlašovat).
+	Na~hlavní stránce systému by se měly zobrazovat závody s~nejbližší uzávěrkou přihlášek a~nejbližší závody, na~které je daný uživatel přihlášený. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému (taková událost bude následně vizuálně od~nezrušených událostí odlišena a~nebude možné se na~ni dále přihlašovat).
 
-	\item přihlašování na~závody a~tréninky
+	\myItem{přihlašování na~závody a~tréninky}
+	Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu.
 
-Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu.
+	\myItem{synchronizace přihlášek}
+	Po~uzávěrce přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do~IS ORIS přes~jeho API. Tato možnost bude samozřejmě dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
 
-	\item synchronizace přihlášek
+	\myItem{e-mailová upozornění}
+	Systém bude umožňovat při~přidávání události odeslat informační e-mail se základními informacemi o~dané události. E-mail bude odeslán pouze těm registrovaným uživatelům, kteří si ve~svém nastavení povolili zasílání e-mailových upozornění.
 
-Po~uzávěrce přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do~IS ORIS přes~jeho API. Tato možnost bude samozřejmě dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
+	\myItem{oznámení}
+	Trenéři a~administrátoři systému budou mít možnost vytvořit oznámení, která se budou zobrazovat na~hlavní stránce systému.
 
-	\item e-mailová upozornění
-
-Systém bude umožňovat při~přidávání události odeslat informační e-mail se základními informacemi o~dané události. E-mail bude odeslán pouze těm registrovaným uživatelům, kteří si ve~svém nastavení povolili zasílání e-mailových upozornění.
-
-	\item oznámení
-
-Trenéři a~administrátoři systému budou mít možnost vytvořit oznámení, která se budou zobrazovat na~hlavní stránce systému.
-
-	\item komentáře
-
-Komentáře mohou psát registrovaní uživatelé ke~všem tréninkům, závodům, oznámením a~také do~globálního „chatu“. Nejnovější komentáře by se měly zobrazovat (včetně informace kam byly napsány) na~hlavní stránce systému.
+	\myItem{komentáře}
+	Komentáře mohou psát registrovaní uživatelé ke~všem tréninkům, závodům, oznámením a~také do~globálního „chatu“. Nejnovější komentáře by se měly zobrazovat (včetně informace kam byly napsány) na~hlavní stránce systému.
 \end{enumerate}
 
 \subsection{Role}
+\label{section:role}
 Každému uživateli bude náležet právě jedna uživatelská role:
 \begin{itemize}
 	\item registrovaný uživatel
