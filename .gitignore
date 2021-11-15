@@ -5,6 +5,7 @@
 *.dvi
 *.fdb_latexmk
 *.fls
+*.gz
 *.lof
 *.log
 *.lol

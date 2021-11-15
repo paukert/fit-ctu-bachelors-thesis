@@ -35,12 +35,12 @@
 % FILL IN THIS INFORMATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ctufittitle{Název příkladné závěrečné práce} % replace with the title of your thesis
-\ctufitauthorfull{Bc. Jiří Nebozíz} % replace with your full name (first name(s) and then family name(s) / surname(s)) including academic degrees
-\ctufitauthorsurnames{Nebozíz} % replace with your surname(s) / family name(s)
-\ctufitauthorgivennames{Jiří} % replace with your first name(s) / given name(s)
-\ctufitsupervisor{doc.\,Ing.\,Damien Zlo,\,Ph.D.} % replace with name of your supervisor/advisor (include academic degrees)
-\ctufitdepartment{Katedra teoretické informatiky} % replace with the department of your defence
-\ctufityear{2021} % replace with the year of your defence
+\ctufitauthorfull{Lukáš Paukert} % replace with your full name (first name(s) and then family name(s) / surname(s)) including academic degrees
+\ctufitauthorsurnames{Paukert} % replace with your surname(s) / family name(s)
+\ctufitauthorgivennames{Lukáš} % replace with your first name(s) / given name(s)
+\ctufitsupervisor{Ing.\,Filip Glazar} % replace with name of your supervisor/advisor (include academic degrees)
+\ctufitdepartment{Katedra softwarového inženýrství} % replace with the department of your defence
+\ctufityear{2022} % replace with the year of your defence
 \ctufitdeclarationplace{Praze} % replace with the place where you sign the declaration
 \ctufitdeclarationdate{\today} % replace with the date of signature of the declaration
 \ctufitabstractCZE{Fill in abstract of this thesis in Czech language. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Suspendisse sagittis ultrices augue.}
@@ -74,7 +74,9 @@
 
 \setcounter{secnumdepth}{4} % numbering sections; 4: subsubsection
 
-
+% Added / customized
+\usepackage{enumitem}
+\input{macros/my-item.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOMIZATION of this template END
@@ -230,16 +232,18 @@ W3C & World Wide Web Consortium
 % MODIFY ANYTHING BELOW THIS LINE
 %%%%%%%%%%%%%%%%%%%
 
-\include{text/text} % include `text.tex' from `text/' subdirectory
+\input{chapters/analysis/analysis.tex}
+
+\input{text/text} % include `text.tex' from `text/' subdirectory
 
 \appendix\appendixinit % do not remove these two commands
 
-\include{text/appendix} % include `appendix.tex' from `text/' subdirectory
+\input{text/appendix} % include `appendix.tex' from `text/' subdirectory
 
 \backmatter % do not remove this command
 
 \printbibliography % print out the BibLaTeX-generated bibliography list
 
-\include{text/medium} % include `medium.tex' from `text/' subdirectory
+\input{text/medium} % include `medium.tex' from `text/' subdirectory
 
 \end{document}
