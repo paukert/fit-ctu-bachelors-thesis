@@ -1,11 +1,10 @@
-\chapter{Analýza}
 \section{Funkční požadavky}
 
 \begin{enumerate}[label=\textcolor{decoration}{\textbf{F\arabic*}}]
 	\myItem{evidence a~správa uživatelů}
 	Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat minimálně e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí e-mailové adresy a~zadaného hesla bude následně uživatel přistupovat do~systému.
 
-	Kromě těchto základních údajů bude mít administrátor možnost nastavit a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství~–~aktivní/pasivní a~roli (viz~sekce \ref{section:role}).
+	Kromě těchto základních údajů bude mít administrátor možnost nastavovat a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}).
 
 	\myItem{evidence a~správa závodů a~tréninků}
 	Dále systém bude umožňovat evidenci a~správu tréninků a~závodů (událostí). Konkrétně je potřeba mít možnost u~každé události evidovat:
@@ -48,7 +47,7 @@
 
 \subsection{Role}
 \label{section:role}
-Každému uživateli bude náležet právě jedna uživatelská role:
+Každému uživateli bude náležet právě jedna z~následujících uživatelských rolí:
 \begin{itemize}
 	\item registrovaný uživatel
 	\begin{itemize}
