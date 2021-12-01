@@ -12,21 +12,21 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 	\begin{itemize}
 		\item název
 		\item typ události (trénink nebo~závod)
-		\item datum a~čas události (od~kdy se začíná startovat~/~kdy událost začíná)
+		\item datum a~čas události (kdy událost začíná)
 		\item místo konání
 		\item pořadatel
 		\item uzávěrka přihlášek
-		\item nepovinně dále:
+		\item disciplína
+		\item vypsané kategorie
+		\item další informace
+		\item v~případě závodu bude možné dále evidovat:
 		\begin{itemize}
-			\item typ závodu (závod může být zařazen do~více soutěží; bude možné nastavit, pouze pokud se jedná o~závod)
-			\item disciplína
-			\item vypsané kategorie
+			\item typ závodu (závod může být zařazen do~více soutěží)
 			\item webová stránka
-			\item další informace
 		\end{itemize}
 	\end{itemize}
 
-	Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů ORIS (dále jen „IS~ORIS“) pomocí unikátního identifikátoru závodu. V~případě importu z~IS~ORIS bude možné též provést automatickou aktualizaci údajů, které se od~doby importu v~IS~ORIS změnily.
+	Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů pomocí unikátního identifikátoru závodu. V~případě importu z~IS~ORIS bude možné též provést automatickou aktualizaci údajů, které se od~doby importu v~IS~ORIS změnily.
 
 	Na~hlavní stránce systému by se měly zobrazovat závody s~nejbližší uzávěrkou přihlášek a~nejbližší závody, na~které je daný uživatel přihlášený. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému (taková událost bude následně vizuálně od~nezrušených událostí odlišena a~nebude možné se na~ni dále přihlašovat).
 
@@ -43,7 +43,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 	Trenéři a~administrátoři systému budou mít možnost vytvořit oznámení, která se budou zobrazovat na~hlavní stránce systému.
 
 	\myItem{komentáře}
-	Komentáře mohou psát registrovaní uživatelé ke~všem tréninkům, závodům, oznámením a~také do~globálního „chatu“. Nejnovější komentáře by se měly zobrazovat (včetně informace kam byly napsány) na~hlavní stránce systému.
+	Komentáře mohou psát registrovaní uživatelé ke~všem tréninkům a~závodům. Nejnovější komentáře by se měly zobrazovat (včetně informace kam byly napsány) na~hlavní stránce systému.
 \end{enumerate}
 
 \subsection{Role}
@@ -56,7 +56,7 @@ Každému uživateli bude náležet právě jedna z~následujících uživatelsk
 		\item výčet akcí, které může registrovaný uživatel vykonávat:
 		\begin{itemize}
 			\item přihlašovat a~odhlašovat se z~tréninků a~závodů
-			\item psát komentáře k~jednotlivým tréninkům, závodům, oznámením a~do~globálního „chatu“ a~následně je i~upravovat
+			\item psát komentáře k~jednotlivým tréninkům a~závodům a~následně je i~upravovat
 			\item měnit svou e-mailovou adresu a~heslo pro~přihlášení do~systému
 			\item možnost nastavit si e-mailová upozornění na~nově přidané události do~systému
 		\end{itemize}
@@ -76,7 +76,7 @@ Každému uživateli bude náležet právě jedna z~následujících uživatelsk
 		\item oproti uživatelům s~rolí trenér může navíc:
 		\begin{itemize}
 			\item upravovat a~mazat veškeré komentáře, oznámení, tréninky a~závody
-			\item registrovat a~spravovat uživatele
+			\item spravovat uživatele
 			\item odhlašovat a~přihlašovat uživatele na~tréninky a~závody (i~po~termínu přihlášek)
 			\item odebírat a~přidávat informaci o~možnosti vzít auto (i~po~termínu přihlášek)
 		\end{itemize}
