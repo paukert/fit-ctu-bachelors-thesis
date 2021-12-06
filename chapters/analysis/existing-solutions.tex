@@ -1,0 +1,64 @@
+\section{Existující řešení}
+Následující podkapitola je věnována již existujícím informačním systémům, které by měly usnadnit sportovním klubům a~skupinám administrativní činnost. V~současné době jich na~trhu existuje již~poměrně velké množství, a~proto se zaměřím pouze na~ty, které mi přišly nejrozšířenější nebo~nějakým způsobem zajímavé. V~následujících sekcích budou přiblížena dvě řešení z~komerční sféry, jeden bezplatný systém a~také bude podrobněji představena aplikace, která je v~současné době využívána klubem KOB~Ústí nad~Orlicí.
+
+\subsection{KUOris}
+Klub orientačního běhu~Ústí nad~Orlicí nyní využívá pro~přihlašování na~závody webovou aplikaci KUOris. Tento systém vznikl v~roce 2016 jako nástupce řešení, které bylo založené na~systému phpBB. \footnote{phpBB je bezplatný open source systém pro~tvorbu diskuzního fóra \cite{phpbb}} V~průběhu let byl drobně upravován, avšak z~důvodu špatného návrhu není možné do~systému KUOris jednoduše přidávat nové funkcionality.
+
+Systém v aktuálním stavu podporuje přidávání a~následné spravování událostí. Při~vytváření události se členům klubu, kteří si tuto funkcionalitu povolili, zasílá informační e-mail se základními informacemi o~dané akci. Na~jednotlivé události se členové klubu mohou přihlašovat a~mohou k~nim psát komentáře.
+
+Mezi~největší nedostatky aplikace KUOris se řadí zastaralé uživatelské rozhraní a~chybějící automatizace. V~dnešní době, kdy na~web přistupuje více lidí z~mobilních zařízení než~z~počítačů~\cite{deviceusage}, by mělo být uživatelské rozhraní jistě responzivní. Další již zmíněný nedostatek spatřuji u nevyužité možnosti automatizace. IS~ORIS nabízí API pro~získávání informací o~závodě a~i~pro~přihlašování na~jednotlivé akce. V současném systému této možnosti není využíváno a~všechny úkony tedy musí administrátor provádět ručně.
+
+\begin{description}
+	\item[Nevýhody:] složitá rozšiřitelnost, neresponzivní UI, absence propojení s~IS ORIS
+\end{description}
+
+\subsection{KIS~–~Klubový Informační Systém}
+KIS je komplexní klubový informační systém, který je díky svým pokročilým funkcionalitám využíván i~největšími sportovními subjekty v~České republice. Mezi uživatele systému se totiž například řadí Český svaz ledního hokeje, Fotbalová asociace České republiky, Český olympijský výbor a~další velké fotbalové a~hokejové kluby. \cite{esports, ceskyhokej}
+
+Mezi klíčové funkčnosti systému se řadí podpora pro~pořádání klubových akcí, správa plateb, evidence dokumentů, zobrazování statistik, kalendář a~mnoho dalších funkcí. K~systému je možné přistupovat i~přes~mobilní aplikaci, která je dostupná pro~zařízení s~operačním systém iOS a~Android. Jedná se o~komerční systém, dle ceníku se cena skládá z~jednorázového počátečního poplatku 9~900~Kč bez~DPH a~následného měsíčního poplatku 300~Kč bez~DPH za~technickou správu. \cite{esports}
+
+\begin{description}
+	\item[Výhody:] hojně využívaný systém s~pokročilými funkcemi a~mobilní aplikací
+	\item[Nevýhody:] nákladnost (jednorázový a~následné měsíční poplatky), absence propojení s~IS ORIS
+\end{description}
+
+\subsection{Sportes~–~Český sportovní evidenční systém}
+Jedná se o~další komplexní klubový systém, ke~kterému je možné opět přistupovat z~webového prohlížeče i~mobilní aplikace. Pro~menší sportovní kluby však pravděpodobně bude překážkou pro~jeho využívání uvedená cena, neboť za~variantu pro~maximálně 100~členů je stanovena na~12~000~Kč bez~DPH ročně. \cite{sportes} // TODO
+
+\begin{description}
+	\item[Výhody:] systém pro kompletní správu sportovního klubu s vlastní mobilní aplikací
+	\item[Nevýhody:] nákladnost (12~000~Kč za~rok bez~DPH), absence propojení s~IS ORIS
+\end{description}
+
+\subsection{Týmuj}
+Týmuj je online služba, která byla do~ostrého provozu spuštěna v~květnu roku 2008. Od~té doby v ní bylo vytvořeno přes~30~000~týmů a~svůj účet si vytvořilo přes~250~000~sportovců. Služba Týmuj je od~svého vzniku neustále vylepšována a~v~roce 2017 byly spuštěny i~mobilní aplikace pro~operační systém iOS a~Android.
+
+Týmuj umožňuje vytvářet a~spravovat události, evidovat docházku u~jednotlivých událostí, posílat zprávy do~týmového chatu a~k~jednotlivým akcím, evidenci týmových plateb, sdílení fotografií a~mnoho dalších věcí. V~rámci týmu mají jednotliví členové jednu ze~tří rolí (majitel, správce nebo~hráč) a~na~základě přidělené role mají odpovídající práva.
+
+Popularitu tohoto online nástroje dokazuje fakt, že jen za~poslední rok bylo přes~Týmuj zorganizováno přes~300~000~událostí. Takový počet akcí bude jistě z~nemalé části způsoben tím, že využívání Týmuj není zpoplatněno a~že~taktéž neexistuje omezení na~maximální počet členů v~týmu. \cite{tymuj}
+
+\begin{description}
+	\item[Výhody:] užívání není zpoplatněno, obsahuje mnoho funkcí, existuje webová i mobilní aplikace
+	\item[Nevýhody:] absence propojení s~IS ORIS
+\end{description}
+
+\subsection{Bakalářské a~diplomové práce}
+Na~podobná témata vzniklo v~minulosti i~několik závěrečných prací na~různých českých univerzitách. V~následujícím seznamu je pro~kompletnost uvedeno několik z~nich, avšak jejich obsah zde nebude detailněji rozebírán.
+
+// TODO
+
+\begin{itemize}
+	\item Informační systém pro sportovní klub
+	- bakalářská práce na FIT ČVUT, 2016
+% 	- https://projects.fit.cvut.cz/theses/2062
+% 	- https://dspace.cvut.cz/handle/10467/66510
+	\item Informační systém pro sportovní kluby
+	- diplomová práce na FIS VŠE, 2013
+% 	- https://vskp.vse.cz/35996_informacni_system_pro_sportovni_kluby
+	\item Informační systém sportovního klubu
+	- bakalářská práce na FI MUNI, 2010
+% 	- https://is.muni.cz/th/nd55f/bc.pdf
+	\item Webový informační systém a principy jeho zabezpečení
+	- diplomová práce na FIT VUT, 2007
+% 	- https://dspace.vutbr.cz/handle/11012/52748
+\end{itemize}
