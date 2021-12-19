@@ -5,7 +5,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 	\myItem{evidence a~správa uživatelů}
 	Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat minimálně e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí e-mailové adresy a~zadaného hesla bude následně uživatel přistupovat do~systému.
 
-	Kromě těchto základních údajů bude mít administrátor možnost nastavovat a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}).
+	Kromě těchto základních údajů bude mít administrátor možnost nastavovat a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}). Uživatele musí být možno anonymizovat kvůli GDPR.
 
 	\myItem{evidence a~správa závodů a~tréninků}
 	Dále systém bude umožňovat evidenci a~správu tréninků a~závodů (událostí). Konkrétně je potřeba mít možnost u~každé události evidovat:
@@ -24,6 +24,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 			\item typ závodu (závod může být zařazen do~více soutěží)
 			\item webová stránka
 		\end{itemize}
+		\item u~tréninku bude možné oproti závodu naopak evidovat maximální kapacitu
 	\end{itemize}
 
 	Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů pomocí unikátního identifikátoru závodu. V~případě importu z~IS~ORIS bude možné též provést automatickou aktualizaci údajů, které se od~doby importu v~IS~ORIS změnily.
@@ -34,7 +35,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 	Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu.
 
 	\myItem{synchronizace přihlášek}
-	Po~uzávěrce přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do~IS~ORIS přes~jeho API. Tato možnost bude ze~zřejmých důvodů dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
+	Po~skončení termínu přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do~IS~ORIS přes~jeho API. Tato možnost bude ze~zřejmých důvodů dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
 
 	\myItem{e-mailová upozornění}
 	Systém bude umožňovat při~přidávání události odeslat informační e-mail se základními informacemi o~dané události. E-mail bude odeslán pouze těm registrovaným uživatelům, kteří si ve~svém nastavení povolili zasílání e-mailových upozornění.
