@@ -75,8 +75,13 @@
 \setcounter{secnumdepth}{4} % numbering sections; 4: subsubsection
 
 % Added / customized
-\usepackage{enumitem}
+\usepackage{bbding} % checkmarks
+\usepackage{enumitem} % lists
 \input{macros/my-item.tex}
+\usepackage{tabularx} % tables
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOMIZATION of this template END
