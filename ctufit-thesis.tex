@@ -96,7 +96,7 @@
 \usepackage{lipsum,tikz}
 \usepackage{csquotes}
 \usepackage[style=iso-numeric]{biblatex}
-\addbibresource{text/bib-database.bib}
+\addbibresource{parts/bib-database.bib}
 \usepackage{listings} % typesetting of sources
 % \usepackage{minted} % typesetting of sources
 
@@ -239,16 +239,14 @@ UI & uživatelské rozhraní (z anglického User Interface)
 \input{chapters/introduction/introduction.tex}
 \input{chapters/analysis/analysis.tex}
 
-\input{text/text} % include `text.tex' from `text/' subdirectory
-
 \appendix\appendixinit % do not remove these two commands
 
-\input{text/appendix} % include `appendix.tex' from `text/' subdirectory
+\input{parts/appendix.tex} % include `appendix.tex' from `parts/' subdirectory
 
 \backmatter % do not remove this command
 
 \printbibliography % print out the BibLaTeX-generated bibliography list
 
-\input{text/medium} % include `medium.tex' from `text/' subdirectory
+\input{parts/medium.tex} % include `medium.tex' from `parts/' subdirectory
 
 \end{document}
