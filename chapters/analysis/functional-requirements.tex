@@ -7,7 +7,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 
 	Kromě těchto základních údajů bude mít administrátor možnost nastavovat a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}). Uživatele musí být možno anonymizovat kvůli GDPR.
 
-	\myItem{evidence a~správa závodů a~tréninků}
+	\myItem{evidence a~správa závodů a~tréninků\label{f:events}}
 	Dále systém bude umožňovat evidenci a~správu tréninků a~závodů (událostí). Konkrétně je potřeba mít možnost u~každé události evidovat:
 	\begin{itemize}
 		\item název
@@ -32,7 +32,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 	Na~hlavní stránce systému by se měly zobrazovat závody s~nejbližší uzávěrkou přihlášek a~nejbližší závody, na~které je daný uživatel přihlášený. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému (taková událost bude následně vizuálně od~nezrušených událostí odlišena a~nebude možné se na~ni dále přihlašovat).
 
 	\myItem{přihlašování na~závody a~tréninky}
-	Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu.
+	Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu. Svou účast mohou uživatelé do~konce uzávěrky přihlášek také odřeknout.
 
 	\myItem{synchronizace přihlášek}
 	Po~skončení termínu přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do~IS~ORIS přes~jeho API. Tato možnost bude ze~zřejmých důvodů dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
@@ -68,6 +68,7 @@ Každému uživateli bude náležet právě jedna z~následujících uživatelsk
 		\item oproti roli registrovaný uživatel má právo:
 		\begin{itemize}
 			\item přidávat a~následně spravovat tréninky a~závody
+			\item odeslat evidované přihlášky do~IS~ORIS
 			\item psát a~upravovat svá oznámení
 		\end{itemize}
 	\end{itemize}
