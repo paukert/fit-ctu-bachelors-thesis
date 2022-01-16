@@ -21,14 +21,14 @@ jobs:
 
       - name: Build Covers
         run: |
-          latexmk -pdf covers/cover.tex
-          latexmk -pdf covers/cover-inverse-colours.tex
+          latexmk -pdf -cd covers/cover.tex
+          latexmk -pdf -cd covers/cover-inverse-colours.tex
 
       - name: Rename PDF Files
         run: |
           mv ctufit-thesis.pdf bp-paukert.pdf
-          mv cover.pdf bp-paukert-desky.pdf
-          mv cover-inverse-colours.pdf bp-paukert-desky-invert-barvy.pdf
+          mv covers/cover.pdf bp-paukert-desky.pdf
+          mv covers/cover-inverse-colours.pdf bp-paukert-desky-invert-barvy.pdf
 
       - name: Upload Thesis Files
         uses: actions/upload-artifact@v2
