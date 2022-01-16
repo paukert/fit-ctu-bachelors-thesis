@@ -19,11 +19,19 @@ jobs:
       - name: Build Thesis
         run: latexmk -pdfxe ctufit-thesis.tex
 
-      - name: Rename PDF file
-        run: mv ctufit-thesis.pdf bp-paukert.pdf
+      - name: Build Covers
+        run: |
+          latexmk -pdf -cd covers/cover.tex
+          latexmk -pdf -cd covers/cover-inverse-colours.tex
 
-      - name: Upload Thesis
+      - name: Rename PDF Files
+        run: |
+          mv ctufit-thesis.pdf bp-paukert.pdf
+          mv covers/cover.pdf bp-paukert-desky.pdf
+          mv covers/cover-inverse-colours.pdf bp-paukert-desky-invert-barvy.pdf
+
+      - name: Upload Thesis Files
         uses: actions/upload-artifact@v2
         with:
-          name: bp-paukert.pdf
-          path: bp-paukert.pdf
+          name: bp-paukert-pdf
+          path: ./bp-*.pdf
