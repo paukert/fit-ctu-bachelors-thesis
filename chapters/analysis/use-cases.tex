@@ -5,7 +5,7 @@ Tato podkapitola se věnuje jednotlivým případům užití, které představuj
 Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bude pracovat se systémem. V~naší aplikaci uvažujeme celkem čtyři různé aktéry~–~přihlášeného a~nepřihlášeného uživatele, administrátora a~trenéra. Vztahy mezi těmito aktéry jsou popsány v~následujícím textu a~jsou znázorněny na~obrázku \ref{figure:actors}.
 \begin{description}
 	\item[Nepřihlášený uživatel]\hfill\newline
-	Nepřihlášený uživatel má přistup pouze k~přihlášení a~registraci. Po~provedení jedné z~těchto akcí se stane přihlášeným uživatelem.
+	Nepřihlášený uživatel má přístup pouze k~přihlášení a~registraci. Po~provedení jedné z~těchto akcí se stane přihlášeným uživatelem.
 	\item[Přihlášený uživatel]\hfill\newline
 	Přihlášený uživatel má práva, která byla již dříve popsána v~sekci \ref{section:role} u~role registrovaný uživatel. Jelikož je uživatel již přihlášený do~systému, tak nemá přístup k~přihlašovací stránce a~k~registraci.
 	\item[Trenér]\hfill\newline
@@ -60,7 +60,7 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\end{enumerateNumbers}
 
 	\myItem{přihlášení na~událost}
-	Přihlášení na~událost je možné provést pouze pokud neproběhla uzávěrka přihlášek a~pokud již není daný uživatel na~danou událost přihlášený.
+	Přihlášení na~událost je možné provést pouze pokud událost nebyla zrušena, neproběhla uzávěrka přihlášek a~pokud již není daný uživatel na~danou událost přihlášený.
 	\begin{enumerateNumbers}
 		\item Přihlášený uživatel přejde na~stránku s~detailními informacemi o~události (viz~\ref{uc:eventdetail}).
 		\item Uživatel vybere jednu z~nabízených kategorií a~volitelně sdělí, zda má možnost jet vlastním autem a~svézt s~sebou i~další členy klubu.
@@ -68,10 +68,10 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\end{enumerateNumbers}
 
 	\myItem{odhlášení z~události}
-	Odhlášení z~události je možné provést pouze pokud neproběhla uzávěrka přihlášek a~pokud je daný uživatel na~danou událost přihlášený.
+	Odhlášení z~události je možné provést pouze pokud nebyla událost zrušena, neproběhla uzávěrka přihlášek a~pokud je daný uživatel na~danou událost přihlášený.
 	\begin{enumerateNumbers}
 		\item Přihlášený uživatel přejde na~stránku s~detailními informacemi o~události (viz~\ref{uc:eventdetail}).
-		\item Účast na~události uživatel zruší kliknutím na~tlačítko \emph{Odhlásit}.
+		\item Účast na~události uživatel odřekne kliknutím na~tlačítko \emph{Odhlásit}.
 	\end{enumerateNumbers}
 
 	\myItem{napsání komentáře}
@@ -92,7 +92,7 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	Tento případ užití popisuje přidání nové události do~systému.
 	\begin{enumerateNumbers}
 		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce a~následně vybere možnost \emph{Vytvořit novou událost}.
-		\item Pokud je přidávaná událost již evidovaná v~IS~ORIS, může uživatel zadat ORIS~ID události a~většina požadovaných informací se automaticky předvyplnění.
+		\item Pokud je přidávaná událost již evidovaná v~IS~ORIS, může uživatel zadat ORIS~ID události a~většina požadovaných informací se automaticky předvyplní.
 		\item Po~(do)vyplnění požadovaných informací se událost přidá do~systému kliknutím na~tlačítko \emph{Přidat novou událost}.
 	\end{enumerateNumbers}
 
