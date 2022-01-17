@@ -39,6 +39,7 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 		\item Pokud přihlášení proběhlo úspěšně, bude uživatel přesměrován na~hlavní stránku aplikace nebo~na~stránku, na~kterou se snažil před~přihlášením přistoupit.
 		\item Přihlášený uživatel má naopak možnost se ze~systému odhlásit kliknutím na~položku \emph{Odhlásit} v~hlavní nabídce.
 	\end{enumerateNumbers}
+	\newpage
 
 	\myItem{zobrazení seznamu událostí\label{uc:listevents}}
 	Tento případ užití popisuje proces zobrazení seznamu událostí evidovaných v~systému.
@@ -74,11 +75,12 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 		\item Účast na~události uživatel odřekne kliknutím na~tlačítko \emph{Odhlásit}.
 	\end{enumerateNumbers}
 
-	\myItem{napsání komentáře}
-	Tento případ užití popisuje proces přidání komentáře ke~konkrétní události.
+	\myItem{přidání a~úprava komentáře}
+	Tento případ užití popisuje přidání a~následnou úpravu komentáře u~konkrétní události.
 	\begin{enumerateNumbers}
 		\item Přihlášený uživatel přejde na~stránku s~detailními informacemi o~události (viz~\ref{uc:eventdetail}).
 		\item Po~napsání komentáře do~textového pole klikne na~tlačítko \emph{Přidat komentář}.
+		\item Své komentáře má uživatel možnost upravit kliknutím na~ikonku pro~úpravu vedle konkrétního komentáře. To načte napsaný komentář do~textového pole a~po~jeho úpravě dojde k~uložení kliknutím na~tlačítko \emph{Upravit komentář}.
 	\end{enumerateNumbers}
 
 	\myItem{úprava osobních údajů a~preferencí}
@@ -119,14 +121,16 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 		\item Pro~smazání oznámení klikne trenér na~ikonku koše vedle odpovídajícího oznámení a~v~následně zobrazeném dialogu smazání potvrdí.
 	\end{enumerateNumbers}
 
-	\myItem{úprava uživatele}
-	Tento případ užití popisuje proces upravení informací o~registrovaném uživateli.
+	\myItem{úprava a anonymizace uživatele}
+	Funkce anonymizace uživatele přenastaví uživatelovo jméno na~\emph{Anonymní uživatel} a~smaže všechny jeho údaje (registrační číslo, stav osobního konta, typ členství, e-mail a~heslo). Tímto je uživateli znemožněno přihlášení do~aplikace.
 	\begin{enumerateNumbers}
 		\item Administrátor klikne na~položku \emph{Administrace} v~hlavní nabídce a~následně vybere ze~seznamu uživatele, kterého si přeje upravit.
 		\item Po~upravení požadovaných informací klikne na~tlačítko \emph{Uložit změny}.
+		\item Anonymizaci uživatele lze provést kliknutím na~tlačítko \emph{Anonymizovat uživatele}.
 	\end{enumerateNumbers}
 
 \end{enumerate}
+\newpage
 
 \subsection{Pokrytí funkčních požadavků v případech užití}
 V~tabulce \ref{table:use-cases} je zachyceno pokrytí funkčních požadavků v~jednotlivých případech užití. Symbol~\Checkmark říká, že příslušný funkční požadavek je součástí daného případu užití.
