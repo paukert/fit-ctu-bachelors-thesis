@@ -1,7 +1,7 @@
 \section{Nefunkční požadavky}
 Nefunkční požadavky se na~rozdíl od~funkčních požadavků zabývají vlastnostmi a~omezeními daného systému. Mohou se mezi~nimi objevit požadavky, které budou podstatné jak~pro~samotné uživatele systému, jako například doba odezvy, zabezpečení systému, způsob zobrazování na~mobilních zařízeních, tak zde mohou být uvedeny i~požadavky techničtějšího charakteru, jako~například použití konkrétních technologií nebo~možnost snadné rozšiřitelnosti systému. \cite{requirements}
 
-\begin{enumerate}[label=\textcolor{decoration}{\textbf{N\arabic*}}]
+\begin{enumerate}[label=\textcolor{decoration}{\textbf{N\arabic*}}, leftmargin=7mm]
 	\myItem{responzivita}
 	Webová aplikace bude přizpůsobovat svůj vzhled na~základě rozlišení klientského zařízení.
 
@@ -9,10 +9,10 @@ Nefunkční požadavky se na~rozdíl od~funkčních požadavků zabývají vlast
 	Aplikace by měla být připravena na~přeložení do~dalších jazyků.
 
 	\myItem{technologie}
-	Aplikace bude napsána v~programovacím jazyce PHP ve~frameworku Symfony.
+	S~ohledem na~aktuálně využívané hostingové služby musí být aplikace napsána v~programovacím jazyce PHP a~pro~ukládání dat musí být využita relační databáze MariaDB.
 
 	\myItem{zabezpečení}
-	Komunikace s~aplikací bude probíhat pouze přes~zabezpečený protokol HTTPS.
+	Komunikace s~aplikací bude probíhat pouze přes~šifrovaný protokol HTTPS.
 
 	\myItem{rozšiřitelnost a~modifikovatelnost}
 	Aplikace by měla být snadno rozšiřitelná a~modifikovatelná. Její využití by tedy nemělo být limitováno pouze na~kluby orientačního běhu, ale své uplatnění by měla nalézt i~u~sportovních organizací zabývajících se jiným sportem.

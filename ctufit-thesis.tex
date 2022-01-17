@@ -34,7 +34,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FILL IN THIS INFORMATION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ctufittitle{Název příkladné závěrečné práce} % replace with the title of your thesis
+\ctufittitle{Systém pro~sportovní kluby} % replace with the title of your thesis
 \ctufitauthorfull{Lukáš Paukert} % replace with your full name (first name(s) and then family name(s) / surname(s)) including academic degrees
 \ctufitauthorsurnames{Paukert} % replace with your surname(s) / family name(s)
 \ctufitauthorgivennames{Lukáš} % replace with your first name(s) / given name(s)
@@ -75,8 +75,14 @@
 \setcounter{secnumdepth}{4} % numbering sections; 4: subsubsection
 
 % Added / customized
-\usepackage{enumitem}
-\input{macros/my-item.tex}
+\usepackage{bbding} % checkmarks
+
+\usepackage{enumitem} % lists
+\input{macros/myItem.tex}
+\input{macros/enumerateNumbers.tex}
+
+\usepackage{tabularx} % tables
+\input{macros/columnTypes.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOMIZATION of this template END
@@ -91,7 +97,7 @@
 \usepackage{lipsum,tikz}
 \usepackage{csquotes}
 \usepackage[style=iso-numeric]{biblatex}
-\addbibresource{text/bib-database.bib}
+\addbibresource{parts/bib-database.bib}
 \usepackage{listings} % typesetting of sources
 % \usepackage{minted} % typesetting of sources
 
@@ -211,15 +217,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sagittis hen
 \chapter{Seznam zkratek}
 	
 \begin{tabular}{rl}
-DFA & Deterministic Finite Automaton\\
-FA & Finite Automaton\\
-LPS & Labelled Prüfer Sequence\\
-NFA & Nondeterministic Finite Automaton\\
-NPS & Numbered Prüfer Sequence\\
-XML & Extensible Markup Language\\
-XPath & XML Path Language\\
-XSLT & eXtensible Stylesheet Language Transformations\\
-W3C & World Wide Web Consortium
+API & rozhraní pro programování aplikací\\
+    & (z anglického Application Programming Interface)\\
+GDPR & Obecné nařízení o ochraně osobních údajů\\
+	 & (z anglického General Data Protection Regulation)\\
+IS ORIS & Informační systém Českého svazu orientačních sportů\\
+JSON & JavaScriptový objektový zápis\\
+     & (z anglického JavaScript Object Notation)\\
+UI & uživatelské rozhraní (z anglického User Interface)
 \end{tabular}
 %%%%%%%%%%%%%%%%%%%
 % ABBREVIATIONS END
@@ -232,18 +237,17 @@ W3C & World Wide Web Consortium
 % MODIFY ANYTHING BELOW THIS LINE
 %%%%%%%%%%%%%%%%%%%
 
+\input{chapters/introduction/introduction.tex}
 \input{chapters/analysis/analysis.tex}
-
-\input{text/text} % include `text.tex' from `text/' subdirectory
 
 \appendix\appendixinit % do not remove these two commands
 
-\input{text/appendix} % include `appendix.tex' from `text/' subdirectory
+\input{parts/appendix.tex} % include `appendix.tex' from `parts/' subdirectory
 
 \backmatter % do not remove this command
 
 \printbibliography % print out the BibLaTeX-generated bibliography list
 
-\input{text/medium} % include `medium.tex' from `text/' subdirectory
+\input{parts/medium.tex} % include `medium.tex' from `parts/' subdirectory
 
 \end{document}
