@@ -15,4 +15,5 @@ _minted-ctufit-thesis/
 *.pdf
 *.ps
 *.run.xml
+*.synctex.gz
 *.toc

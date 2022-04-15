@@ -16,7 +16,7 @@ Jedním z důvodů, proč jsem si pro implementaci této aplikace vybral Symfony
 \subsection{Databáze}
 Pro ukládání dat lze využít několik typů databází. V současnosti jsou stále nejpopulárnější relační databáze, které jsou občas z důvodu využívaného dotazovacího jazyka také označovány jako SQL databáze. Jejich základem jsou tabulky, které mají pevně danou strukturu. Jednotlivé řádky tabulky  představují uložené záznamy a sloupce obsahují vlastnosti daných záznamů. \cite{databases} Dnes se však kromě relačních databází můžeme setkat i s NoSQL databázemi, které například mají své uplatnění při ukládání nestrukturovaných nebo velkých dat \cite{nosql}.
 
-Vyvíjená aplikace bude pracovat s pevně struktorovanými daty, a proto bude využita relační databáze. Konkrétně se bude jednat o databázi MariaDB, která vznikla v roce 2009 jako kopie MySQL kvůli obavám jejího dalšího směřování po odkoupení společností Oracle \cite{mariadb}.
+Vyvíjená aplikace bude pracovat s pevně struktorovanými daty, a proto bude využita relační databáze. Vzhledem k nefunkčnímu požadavku \ref{n:technologies} se bude jednat o databázi MariaDB, která vznikla v roce 2009 jako kopie MySQL kvůli obavám jejího dalšího směřování po odkoupení společností Oracle \cite{mariadb}.
 
 \subsection{Doctrine}
 Jednou z dalších zvolených technologií pro vývoj nové aplikace je Doctrine. Výběr Doctrine je úzce spojen s výběrem frameworku, neboť Symfony přímo poskytuje možnost integrace s touto komponentou. Jedná se o sadu knihoven, které umožňují objektově relační mapování (ORM) a které nabízí objektově orientované API (a řadu dalšího) pro manipulaci s daty a se strukturou databáze \cite{doctrine_orm, doctrine_dbal}.
@@ -25,5 +25,5 @@ Při vývoji aplikací v objektově orientovaných jazycích se často využíva
 
 Další částí Doctrine je již zmíněná abstraktní vrstva nad databází (DBAL). Díky ní nemusíme k databázi přistupovat napřímo, ale můžeme využít připravené metody, které poskytují jednotný přístup k datům a struktuře databáze nezávisle na využívaném řešení. V současnosti jsou podporovány všechny nejpoužívanější typy relačních databází zahrnující MySQL, Oracle, PostgreSQL, SQLite a Microsoft SQL Server. \cite{doctrine_dbal}
 
-\subsection{Boostrap}
-TODO
+\subsection{Bootstrap}
+Poslední technologie, která bude představena v této kapitole, je Bootstrap. Jedná se svobodný a otevřený software, který usnadňuje tvorbu uživatelského rozhraní ve~webových aplikacích. Zahrnuje šablony napsané v HTML, CSS a další rozšíření implementované v jazyku JavaScript. Šablony jsou k dispozici pro všechny základní HTML elementy a umožňují jednoduše vytvářet responzivní uživatelské rozhraní. \cite{bootstrap}

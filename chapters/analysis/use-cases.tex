@@ -5,7 +5,7 @@ Tato podkapitola se věnuje jednotlivým případům užití, které představuj
 Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bude pracovat se systémem. V~naší aplikaci uvažujeme celkem čtyři různé aktéry~–~přihlášeného a~nepřihlášeného uživatele, administrátora a~trenéra. Vztahy mezi těmito aktéry jsou popsány v~následujícím textu a~jsou znázorněny na~obrázku \ref{figure:actors}.
 \begin{description}
 	\item[Nepřihlášený uživatel]\hfill\newline
-	Nepřihlášený uživatel má přístup pouze k~přihlášení a~registraci. Po~provedení jedné z~těchto akcí se stane přihlášeným uživatelem.
+	Nepřihlášený uživatel má přístup pouze k~přihlášení a~registraci. Po~provedení první uvedené akce se stane přihlášeným uživatelem.
 	\item[Přihlášený uživatel]\hfill\newline
 	Přihlášený uživatel má práva, která byla již dříve popsána v~sekci \ref{section:role} u~role registrovaný uživatel. Jelikož je uživatel již přihlášený do~systému, tak nemá přístup k~přihlašovací stránce a~k~registraci.
 	\item[Trenér]\hfill\newline
@@ -28,8 +28,8 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	Před~prvním přístupem do~systému se musí člen klubu zaregistrovat. 
 	\begin{enumerateNumbers}
 		\item Nepřihlášený uživatel klikne na~položku \emph{Registrace} v~hlavní nabídce.
-		\item Pro~úspěšné dokončení registrace musí vyplnit svou e-mailou adresu, heslo, jméno a~příjmení a~kliknout na~tlačítko \emph{Registrovat}.
-		\item Registraci musí následně schválit některý z~administrátorů a~poté se již nepřihlášený uživatel může pomocí zadané e-mailové adresy a~hesla přihlásit do~systému.
+		\item Pro~úspěšné dokončení registrace musí vyplnit svou e-mailou adresu, registrační číslo, heslo, jméno a~příjmení a~kliknout na~tlačítko \emph{Registrovat}.
+		\item Registraci musí následně schválit některý z~administrátorů a~poté se již nepřihlášený uživatel může pomocí zadaného registračního čísla a~hesla přihlásit do~systému.
 	\end{enumerateNumbers}
 	\newpage
 
@@ -41,21 +41,21 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 		\item Přihlášený uživatel má naopak možnost se ze~systému odhlásit kliknutím na~položku \emph{Odhlásit} v~hlavní nabídce.
 	\end{enumerateNumbers}
 
-	\myItem{zobrazení seznamu událostí\label{uc:listevents}}
-	Tento případ užití popisuje proces zobrazení seznamu událostí evidovaných v~systému.
+	\myItem{zobrazení seznamu závodů nebo tréninků\label{uc:listevents}}
+	Tento případ užití popisuje zobrazení seznamu závodů/tréninků evidovaných v~systému.
 	\begin{enumerateNumbers}
-		\item Přihlášený uživatel klikne na~položku \emph{Události} v~hlavní nabídce
-		\item Ve~výchozím nastavení se zobrazují všechny nadcházející události, avšak upravením filtru v~horní části stránky lze zobrazit i~minulé události nebo~provést filtraci na~základě typu události, případně na~základě typu závodu.
-		\item Na~jedné stránce se vždy zobrazuje maximální 25~událostí, další události je možné zobrazit přejitím na~následující (předchozí) stránku.
+		\item Přihlášený uživatel klikne na~položku \emph{Závody} nebo \emph{Tréninky} v~hlavní nabídce.
+		\item Ve~výchozím nastavení se zobrazují všechny nadcházející události, avšak upravením filtru v~horní části stránky lze zobrazit i~minulé události nebo~provést filtraci na~základě názvu události.
+		\item Na~jedné stránce se vždy zobrazuje maximální 15~událostí, další události je možné zobrazit přejitím na~následující (předchozí) stránku.
 	\end{enumerateNumbers}
 
 	\myItem{zobrazení detailních informací o~události\label{uc:eventdetail}}
-	V~seznamu událostí jsou zobrazovány pouze základní informace o~událostech, pro~zobrazení detailních informací je nezbytné přejít na~samostatnou stránku.
+	V~seznamu závodů/tréninků jsou zobrazovány pouze základní informace, pro~zobrazení detailních informací o události je nezbytné přejít na~samostatnou stránku.
 	\begin{enumerateNumbers}
 		\item Přihlášený uživatel se může prokliknout na~stránku s~informacemi o~události z(e):
 		\begin{enumerate}[label=\textcolor{decoration}{\textbf{\alph*.}}]
-			\item seznamu událostí (viz~\ref{uc:listevents}).
-			\item hlavní stránky, kde se zobrazuje 5~událostí, u~kterých nejdříve končí uzávěrka přihlášek, a~5~nejbližších událostí, na~které je uživatel přihlášený.
+			\item seznamu závodů/tréninků (viz~\ref{uc:listevents}).
+			\item hlavní stránky, kde se zobrazuje 5~závodů a 3 tréninky, u~kterých nejdříve končí uzávěrka přihlášek.
 		\end{enumerate}
 		\item Přechod na~stránku se~všemi evidovanými informacemi o~události (viz~\ref{f:events}) proběhne po~kliknutí na~název události v~jednom ze~seznamů uvedených výše.
 	\end{enumerateNumbers}
@@ -94,16 +94,16 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\myItem{přidání události}
 	Tento případ užití popisuje přidání nové události do~systému.
 	\begin{enumerateNumbers}
-		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce a~následně vybere možnost \emph{Vytvořit novou událost}.
+		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce a~následně vybere možnost \emph{Přidat nový trénink} nebo \emph{Přidat nový závod}.
 		\item Pokud je přidávaná událost již evidovaná v~IS~ORIS, může uživatel zadat ORIS~ID události a~většina požadovaných informací se automaticky předvyplní.
-		\item Po~(do)vyplnění požadovaných informací se událost přidá do~systému kliknutím na~tlačítko \emph{Přidat novou událost}.
+		\item Po~(do)vyplnění požadovaných informací se událost přidá do~systému kliknutím na~tlačítko \emph{Přidat událost}.
 	\end{enumerateNumbers}
 
 	\myItem{úprava události}
 	Tento případ užití popisuje proces upravení události již evidované v~systému.
 	\begin{enumerateNumbers}
 		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce a~následně vybere ze~seznamu událost, kterou si přeje upravit.
-		\item Po~upravení požadovaných informací klikne na~tlačítko \emph{Uložit změny}.
+		\item Po~upravení požadovaných informací klikne na~tlačítko \emph{Upravit událost}.
 	\end{enumerateNumbers}
 
 	\myItem{synchronizace přihlášek}

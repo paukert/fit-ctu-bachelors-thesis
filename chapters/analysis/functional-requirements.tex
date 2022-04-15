@@ -3,9 +3,9 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 
 \begin{enumerate}[label=\textcolor{decoration}{\textbf{F\arabic*}}, leftmargin=6mm]
 	\myItem{evidence a~správa uživatelů}
-	Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat minimálně e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí e-mailové adresy a~zadaného hesla bude následně uživatel přistupovat do~systému.
+	Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat minimálně registrační číslo, e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí registračního čísla a~zadaného hesla bude následně uživatel přistupovat do~systému.
 
-	Kromě těchto základních údajů bude mít administrátor možnost nastavovat a~upravovat uživatelovo registrační číslo, stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}). Uživatele musí být možno anonymizovat kvůli GDPR.
+	Kromě těchto základních údajů bude mít administrátor možnost uživateli nastavovat a~upravovat stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}). Uživatele musí být možno anonymizovat kvůli GDPR.
 
 	\myItem{evidence a~správa závodů a~tréninků\label{f:events}}
 	Dále systém bude umožňovat evidenci a~správu tréninků a~závodů (událostí). Konkrétně je potřeba mít možnost u~každé události evidovat:
@@ -21,15 +21,15 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 		\item další informace
 		\item v~případě závodu bude možné dále evidovat:
 		\begin{itemize}
-			\item typ závodu (závod může být zařazen do~více soutěží)
+			\item typ závodu
 			\item webovou stránku
 		\end{itemize}
 		\item u~tréninku bude možné oproti závodu naopak evidovat maximální kapacitu
 	\end{itemize}
 
-	Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů pomocí unikátního identifikátoru závodu. V~případě importu z~IS~ORIS bude možné též provést automatickou aktualizaci údajů, které se od~doby importu v~IS~ORIS změnily.
+	Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů pomocí unikátního identifikátoru závodu.
 
-	Na~hlavní stránce systému by se měly zobrazovat závody s~nejbližší uzávěrkou přihlášek a~nejbližší závody, na~které je daný uživatel přihlášený. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému (taková událost bude následně vizuálně od~nezrušených událostí odlišena a~nebude možné se na~ni dále přihlašovat).
+	Na~hlavní stránce systému by se měly zobrazovat závody a tréninky s~nejbližší uzávěrkou přihlášek. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému (taková událost bude následně vizuálně od~nezrušených událostí odlišena a~nebude možné se na~ni dále přihlašovat).
 
 	\myItem{přihlašování na~závody a~tréninky}
 	Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu. Svou účast mohou uživatelé do~konce uzávěrky přihlášek také odřeknout.
@@ -77,7 +77,7 @@ Každému uživateli bude náležet právě jedna z~následujících uživatelsk
 		\item má kompletní přístup ke~všem funkcionalitám systému
 		\item oproti uživatelům s~rolí trenér může navíc:
 		\begin{itemize}
-			\item upravovat a~mazat veškeré komentáře, oznámení, tréninky a~závody
+			\item upravovat a~mazat veškeré komentáře a oznámení
 			\item spravovat uživatele
 			\item odhlašovat a~přihlašovat uživatele na~tréninky a~závody (i~po~termínu přihlášek)
 			\item odebírat a~přidávat informaci o~možnosti vzít auto (i~po~termínu přihlášek)
