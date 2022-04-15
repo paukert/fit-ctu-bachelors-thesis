@@ -86,6 +86,8 @@
 
 \usepackage{pdflscape}
 
+\usepackage{xevlna}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CUSTOMIZATION of this template END
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,7 +156,7 @@
 % This is a place to thank people for helping you. It is common to thank your supervisor.
 %%%%%%%%%%%%%%%%%%%
 \begin{acknowledgmentpage}
-	Chtěl bych poděkovat především sit amet, consectetuer adipiscing elit. Curabitur sagittis hendrerit ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Suspendisse sagittis ultrices augue.
+	Tímto bych chtěl poděkovat vedoucímu práce Ing.~Filipu Glazarovi za~cenné rady a~přátelský přístup. Své poděkování bych rád také věnoval přítelkyni a~celé mé rodině, kteří mi pomáhali s~kontrolou práce a~zároveň mě podporovali během celého studia.
 \end{acknowledgmentpage} 
 %%%%%%%%%%%%%%%%%%%
 % ACKNOWLEDGMENT END
@@ -216,23 +218,19 @@ Beru na~vědomí, že se na~moji práci vztahují práva a~povinnosti vyplývaj�
 % OR REMOVE ENTIRELY
 % List the abbreviations in lexicography order.
 %%%%%%%%%%%%%%%%%%%
-\chapter{Seznam zkratek a pojmů}
+\chapter{Seznam zkratek}
 	
 \begin{tabular}{rl}
-API & rozhraní pro programování aplikací\\
-    & (z anglického Application Programming Interface)\\
-DBAL & Abstraktní vrstva nad databází\\
-     & (z anglického DataBase Abstraction Layer)\\
-GDPR & Obecné nařízení o ochraně osobních údajů\\
-     & (z anglického General Data Protection Regulation)\\
-HTML & značkovací jazyk používaný pro tvorbu webových stránek\\
-     & (z anglického Hypertext Markup Language)\\
+API & Application Programming Interface\\
+CMS & Content Management System\\
+DBAL & Database Abstraction Layer\\
+GDPR & General Data Protection Regulation\\
+HTML & Hypertext Markup Language\\
 IS ORIS & Informační systém Českého svazu orientačních sportů\\
-JSON & JavaScriptový objektový zápis\\
-     & (z anglického JavaScript Object Notation)\\
-ORM & Objektově relační mapování\\
-    & (z anglického Object–relational mapping)\\
-UI & uživatelské rozhraní (z anglického User Interface)
+JSON & JavaScript Object Notation\\
+MVC & Model–view–controller\\
+ORM & Object–relational mapping\\
+UI & User Interface
 \end{tabular}
 %%%%%%%%%%%%%%%%%%%
 % ABBREVIATIONS END
@@ -248,6 +246,7 @@ UI & uživatelské rozhraní (z anglického User Interface)
 \input{chapters/introduction/introduction.tex}
 \input{chapters/analysis/analysis.tex}
 \input{chapters/design/design.tex}
+\input{chapters/implementation/implementation.tex}
 
 \appendix\appendixinit % do not remove these two commands
 
