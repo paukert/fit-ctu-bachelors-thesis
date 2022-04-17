@@ -478,6 +478,8 @@
 	\@ifpackageloaded{minted}{%
 		\DeclareRobustCommand{\listingscaption}{\thectufitlistinglabel}%
 		\DeclareRobustCommand{\listoflistingscaption}{\thectufitlollabel}%
+		\DeclareRobustCommand{\listingname}{\thectufitlistinglabel}% for minted with newfloat package
+		\DeclareRobustCommand{\listlistingname}{\thectufitlollabel}% for minted with newfloat package
 		\usemintedstyle{bw}%
 		\setminted{bgcolor=backgroundgray}%
 		\setmintedinline{bgcolor={}}
