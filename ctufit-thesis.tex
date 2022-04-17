@@ -106,7 +106,10 @@
 \addbibresource{parts/bib-database.bib}
 % \usepackage{listings} % typesetting of sources
 \usepackage[newfloat]{minted} % typesetting of sources
-\captionsetup[listing]{position=top}
+\captionsetup[listing]{position=top, skip=1pt}
+\AtBeginEnvironment{minted}{%
+    \renewcommand{\fcolorbox}[4][]{#4}% disable red colorbox on syntax error
+}
 
 %theorems, definitions, etc.
 \theoremstyle{plain}
@@ -234,7 +237,9 @@ IS ORIS & Informační systém Českého svazu orientačních sportů\\
 JSON & JavaScript Object Notation\\
 MVC & Model–view–controller\\
 ORM & Object–relational mapping\\
-UI & User Interface
+REST & Representational State Transfer\\
+UI & User Interface\\
+XML & Extensible Markup Language
 \end{tabular}
 %%%%%%%%%%%%%%%%%%%
 % ABBREVIATIONS END
