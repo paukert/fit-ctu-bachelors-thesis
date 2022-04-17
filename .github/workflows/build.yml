@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Thesis
-        run: latexmk -pdfxe ctufit-thesis.tex
+        run: latexmk -pdfxe -shell-escape ctufit-thesis.tex
 
       - name: Build Covers
         run: |
