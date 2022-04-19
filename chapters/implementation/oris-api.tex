@@ -2,7 +2,7 @@
 Jednou z nových funkcí oproti současně používanému systému je napojení na IS ORIS. Konkrétně je v nové aplikaci umožněno automatické načítání informací o závodu evidovaného v celorepublikovém systému a také odesílání evidovaných přihlášek. Propojení je dosaženo s využitím dostupného API, které je popsáno v sekci \ref{implementation:oris-api}.
 
 \subsubsection{Webové API}\label{implementation:api}
-Zkratku API lze do češtiny přeložit jako „rozhraní pro programování aplikací“. Z tohoto slovního spojení však člověk, který se o oblast informačních technologií nezajímá, pravděpodobně stále nebude mít moc představu, k čemu to API vlastně je. V případě webového API se jedná o rozhraní, které umožňuje komunikaci mezi různými aplikacemi nebo různými částmi aplikace. Jedna strana musí toto rozhraní, jež se může skládat z více koncových bodů (endpointů), poskytovat a druhá následně může na některý z těchto endpointů posílat povolené instrukce, a tím s první interagovat. V dnešní době je pro API orientovaná na data nejčastěji využívána architektura REST, avšak informační systém ORIS své API založil na vlastní architektuře, jejíž popis je součástí následující sekce \ref{implementation:oris-api}. \cite{api}
+Zkratku API lze do češtiny přeložit jako „rozhraní pro programování aplikací“. Z tohoto slovního spojení však člověk, který se v oblasti informačních technologií nepohybuje, pravděpodobně stále nebude mít moc představu, k čemu to API vlastně je. V případě webového API se jedná o rozhraní, které umožňuje komunikaci mezi různými aplikacemi nebo různými částmi aplikace. Jedna strana musí toto rozhraní, jež se může skládat z více koncových bodů (endpointů), poskytovat a druhá následně může na některý z těchto endpointů posílat povolené instrukce, a tím s první interagovat. V dnešní době je pro API orientovaná na data nejčastěji využívána architektura REST, avšak informační systém ORIS své API založil na vlastní architektuře, jejíž popis je součástí následující sekce \ref{implementation:oris-api}. \cite{api}
 
 \subsubsection{ORIS API}\label{implementation:oris-api}
 Veškerá komunikace s ORIS API probíhá pomocí GET požadavků. Každý požadavek musí obsahovat query parametr s názvem metody a názvem formátu, ve kterém chceme data obdržet. V závislosti na vybrané metodě může být nutné uvést i další query parametry, které jsou pro~ni specifické. V současné době je podporováno 28 různých method a 2 datové formáty (JSON a XML). Příklad požadavku na získání všech klubů v Českém svazu orientačních sportů ve formátu JSON můžeme vidět na výpisu kódu \ref{listing:api}. 
@@ -18,7 +18,8 @@ Accept: */*
 
 V nové aplikaci jsou využity 4 z nabízených metod. Konkrétně se jedná o metody \mintinline{text}|getEvent|, \mintinline{text}|getEventList|, \mintinline{text}|getRegistration| a \mintinline{text}|createEntry|. Metoda \mintinline{text}|getEvent| se využívá pro načtení informací o závodě při vytváření nové události, \mintinline{text}|getEventList| se volá při hromadné kontrole času uzávěrky přihlášek a zbývající dvě metody \mintinline{text}|getRegistration| a \mintinline{text}|createEntry| se podílejí na~odesílání přihlášek do IS ORIS.
 
-Jak již bylo zmíněno, při přidávání nového závodu je možné využít automatické načtení informací z celorepublikového systému. Procesy vykonávané v rámci této funkcionality lze rozdělit na 4 logické fáze:
+\subsubsection{Importování nového závodu}
+Jak již bylo zmíněno, při přidávání nového závodu je možné využít automatické načítání informací z celorepublikového systému. Procesy vykonávané v rámci této funkcionality lze rozdělit na~4~logické fáze:
 \begin{enumerate}
     \item Získání ORIS ID závodu od uživatele
     \item Odeslání požadavku na ORIS API
@@ -26,7 +27,7 @@ Jak již bylo zmíněno, při přidávání nového závodu je možné využít 
     \item Načtení zpracovaných dat do formuláře
 \end{enumerate}
 
-V rámci první fáze uživatel vyplní vstupní pole pro ORIS ID ve formuláři a klikne na tlačítko \emph{Importovat závod}. Kliknutím na uvedené tlačítko se spustí mechanismus, který na ORIS API pošle požadavek o zaslání dat týkající se závodu s vyplněným ORIS ID. Příklad požadavku a odpovědi, pokud je závod se zadaným ORIS ID nalezen, je ve výpisu kódu \ref{listing:get-event-request} respektive \ref{listing:get-event-response}.
+V rámci první fáze uživatel vyplní vstupní pole pro ORIS ID ve formuláři a klikne na tlačítko \emph{Importovat závod}. Kliknutím na uvedené tlačítko se spustí mechanismus, který na ORIS API pošle požadavek o zaslání dat týkající se závodu s vyplněným ORIS ID. Příklad validního požadavku a následné odpovědi, je na výpisu kódu \ref{listing:get-event-request} respektive \ref{listing:get-event-response}.
 
 \begin{listing}[h]
     \caption{Požadavek na získání informací o závodu}\label{listing:get-event-request}
@@ -58,3 +59,6 @@ Date: Sun, 17 Apr 2022 12:06:08 GMT
 \end{listing}
 
 Z přijatých dat je pomocí speciální třídy (mapperu) sestaven nový objekt typu \mintinline{text}|Race|, jenž je následně předán formuláři. Ten si již jen načte data z tohoto objektu a výsledná stránka s předvyplněnými hodnotami je zaslána uživateli.
+
+\subsubsection{Odesílání přihlášek}
+TODO - dopsat po implementaci
