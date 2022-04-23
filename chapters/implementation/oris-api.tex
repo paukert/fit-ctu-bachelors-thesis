@@ -40,10 +40,13 @@ Accept: */*
 
 \begin{listing}[h]
     \caption{Začátek odpovědi na požadavek na získání informací o závodu}\label{listing:get-event-response}
-    \begin{minted}{json}
+    \begin{minted}{http}
 HTTP/1.1 200 OK
 Date: Sun, 17 Apr 2022 12:06:08 GMT
 
+    \end{minted}
+    \vspace{-11mm}
+    \begin{minted}{json}
 {
     "Method": "getEvent",
     "Format": "json",
@@ -58,7 +61,7 @@ Date: Sun, 17 Apr 2022 12:06:08 GMT
     \end{minted}
 \end{listing}
 
-Z přijatých dat je pomocí speciální třídy (mapperu) sestaven nový objekt typu \mintinline{text}|Race|, jenž je následně předán formuláři. Ten si již jen načte data z tohoto objektu a výsledná stránka s předvyplněnými hodnotami je zaslána uživateli.
+Z přijatých dat je pomocí speciální třídy sestaven nový objekt typu \mintinline{text}|Race|, jenž je následně předán formuláři. Ten si již jen načte data z tohoto objektu a výsledná stránka včetně předvyplněných hodnot je zaslána uživateli.
 
 \subsubsection{Odesílání přihlášek}
 TODO - dopsat po implementaci

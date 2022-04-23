@@ -107,9 +107,6 @@
 % \usepackage{listings} % typesetting of sources
 \usepackage[newfloat]{minted} % typesetting of sources
 \captionsetup[listing]{position=top, skip=1pt}
-\AtBeginEnvironment{minted}{%
-    \renewcommand{\fcolorbox}[4][]{#4}% disable red colorbox on syntax error
-}
 
 %theorems, definitions, etc.
 \theoremstyle{plain}
