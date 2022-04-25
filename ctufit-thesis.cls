@@ -68,8 +68,8 @@
 % colors
  \definecolor{decoration}{RGB}{0, 122, 195} %CTU blue
  \definecolor{heading}{RGB}{0, 122, 195}
- \definecolor{headbackgroundgray}{RGB}{199, 219, 241} %light blue
- \definecolor{backgroundgray}{RGB}{199, 219, 241} %CTU light blue
+ \definecolor{headbackgroundgray}{RGB}{215, 229, 245} %light blue
+ \definecolor{backgroundgray}{RGB}{215, 229, 245}
  \definecolor{headgray}{rgb}{0.50,0.50,0.51}
  \definecolor{enumgray}{RGB}{0, 122, 195} %CTU blue
 % colors end
