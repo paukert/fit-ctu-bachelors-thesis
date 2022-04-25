@@ -1,8 +1,62 @@
 \chapter{Uživatelské testování}
-TODO
+Tato kapitola se zabývá testováním vytvořeného prototypu aplikace. Jak už název napovídá, tak při uživatelském testování ověřují použitelnost aplikace samotní uživatelé. Hlavním cílem je zjistit, zda je uživatelské rozhraní dostatečně intuitivní, a získat případné návrhy na~jeho vylepšení.
 
-\section{Testovací scénáře}
-TODO
+Testování proběhlo za osobní přítomnosti a zúčastnily se ho celkem 4 osoby včetně předsedy klubu KOB~Ústí nad Orlicí. Své zastoupení zde měly různé generace a byli přizváni jak uživatelé současného systému, tak i lidé, kteří s ním nikdy nepracovali. Každý tester byl na začátku seznámen s podstatou systému a následně obdržel sadu úkolů ze sekce \ref{test-cases}, které za dozoru postupně procházel.
+
+\section{Testovací scénáře}\label{test-cases}
+
+\subsection{Registrace a přihlášení do systému}
+\begin{description}
+    \item[Modelová situace] \hfill \\
+        Představte si, že jste nový člen klubu a chcete získat přístup do webové aplikace.
+    \item[Postup] \hfill
+        \vspace{-2mm}
+        \begin{enumerate}
+            \item Přejděte na stránku s registračním formulářem, vyplňte požadované údaje a klikněte na~tlačítko \emph{Registrovat}.
+            \item Vyčkejte na schválení vytvořeného účtu administrátorem.
+            \item Pomocí dříve zadaných údajů se přihlaste do aplikace.
+        \end{enumerate}
+\end{description}
+
+\subsection{Změna kontaktního e-mailu a hesla}
+\begin{description}
+    \item[Modelová situace] \hfill \\
+        Na váš oblíbený internetový obchod zaútočili hackeři a ukradli údaje ke stovkám účtů. Bohužel e-shop využíval k hashování hesel zastaralý mechanismus a byl vám z tohoto důvodu ukraden i e-mail, ke kterému jste používali stejné heslo. Nyní si chcete v systému nastavit novou e-mailovou adresu a změnit přihlašovací heslo.
+        \item[Postup] \hfill
+        \vspace{-2mm}
+        \begin{enumerate}
+            \item Přejděte pomocí hlavní nabídky na stránku \emph{Nastavení}.
+            \item Zadejte svou novou e-mailovou adresu a heslo a změny uložte.
+        \end{enumerate}
+\end{description}
+
+\newpage
+\subsection{Přidání nového závodu a jeho následná úprava}
+\begin{description}
+    \item[Modelová situace] \hfill \\
+        Představte si, že jste trenér klubu KOB Ústí nad Orlicí a chcete přidat do systému nový závod Východočeského poháru.
+    \item[Postup] \hfill
+        \vspace{-2mm}
+        \begin{enumerate}
+            \item Přejděte do administrace systému a zvolte možnost pro přidání nového závodu.
+            \item Využijte možnosti načtení informací o závodu ze systému Českého svazu orientačních sportů ORIS, ve kterém má závod přidělený identifikátor \emph{6738}.
+            \item Přidejte tuto událost se všemi načtenými informacemi a názvem \emph{7. kolo VčP} do systému.
+            \item Na následně zobrazené stránce jste si všimli chybného data uzávěrky přihlášek, vraťte se do~administrace a změňte ho na \emph{7. 5. 2022 23:59}.
+        \end{enumerate}
+\end{description}
+
+\subsection{Přihlášení na závod a napsání komentáře}
+\begin{description}
+    \item[Modelová situace] \hfill \\
+        Jako člen klubu se chcete přihlásit na nadcházející závod Východočeského poháru a napsat k němu komentář.
+    \item[Postup] \hfill
+        \vspace{-2mm}
+        \begin{enumerate}
+            \item Z hlavní stránky systému nebo ze seznamu všech závodů si zobrazte detailní informace o závodu s názvem \emph{7. kolo VčP}.
+            \item Vyberte si požadovanou kategorii a přihlášení potvrďte.
+            \item Napište k této události libovolný komentář.
+        \end{enumerate}
+\end{description}
 
 \section{Průběh}
 TODO
