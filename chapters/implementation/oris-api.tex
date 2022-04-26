@@ -37,6 +37,7 @@ Host: oris.orientacnisporty.cz
 Accept: */*
     \end{minted}
 \end{listing}
+\vspace{-3mm}
 
 \begin{listing}[h]
     \caption{Začátek odpovědi na požadavek na získání informací o závodu}\label{listing:get-event-response}
@@ -64,4 +65,18 @@ Date: Sun, 17 Apr 2022 12:06:08 GMT
 Z přijatých dat je pomocí speciální třídy sestaven nový objekt typu \mintinline{text}|Race|, jenž je následně předán formuláři. Ten si již jen načte data z tohoto objektu a výsledná stránka včetně předvyplněných hodnot je zaslána uživateli.
 
 \subsubsection{Odesílání přihlášek}
-TODO - dopsat po implementaci
+Pro odeslání přihlášek do IS ORIS je zapotřebí poslat GET požadavek, který kromě názvu metody a formátu dat obsahuje i query parametry \mintinline{text}|username|, \mintinline{text}|password|, \mintinline{text}|class| a \mintinline{text}|clubuser|. Takovýto požadavek je potřeba poslat pro každou evidovanou přihlášku, poněvadž systém ORIS nepodporuje posílání informací o více přihláškách najednou.
+
+Parametry \mintinline{text}|username| a \mintinline{text}|password| slouží k autorizaci požadavku a jedná se o jméno a heslo, pomocí kterých uživatel přistupuje do IS ORIS. Tento způsob autentizace však není doporučovaný z několika důvodů. Prvním z nich je skutečnost, že na straně serveru bývá požadovaná URL včetně query parametrů ukládána do přístupových záznamů. Ke stejné situaci dochází i na straně klienta, kde je URL ukládána do historie prohlížeče. Další problém může vzniknout, pokud by stránky využívaly JavaScript, CSS nebo jiné zdroje třetích stran, protože požadavek na tyto zdroje může obsahovat hlavičku \mintinline{text}|Referer| s kompletní URL. \cite{query-parameters-security} Ani jedna z těchto vlastností není žádoucí, a proto by se měly využívat jiné dostupné možnosti autentizace.
+
+Dalším povinným parametrem je \mintinline{text}|class|, který představuje identifikátor kategorie v IS ORIS a který je uložen v databázi vytvořené aplikace v entitě \mintinline{text}|Category|. Posledním povinným query parametrem je \mintinline{text}|clubuser|, jenž identifikuje přihlašovaného uživatele. I tento identifikátor byl nakonec uložen do databáze vytvořeného systému, poněvadž pro jeho získání by bylo potřeba poslat dva další požadavky. Pro každou přihlášku by tedy bylo potřeba celkově poslat tři požadavky místo jednoho. Příklad požadavku na vytvoření přihlášky pro člena klubu s ID \emph{12007} do~kategorie \emph{156818} je na výpisu kódu \ref{listing:create-entry}.
+
+\begin{listing}[h]
+    \caption{Požadavek na vytvoření přihlášky}\label{listing:create-entry}
+    \begin{minted}[breaklines, breakbefore=&]{http}
+GET /API/?format=json&method=createEntry&username=Paukert&password=XXXX&clubuser=12007&class=156818 HTTP/1.1
+Host: oris.orientacnisporty.cz
+Accept: */*
+    \end{minted}
+\end{listing}
+\vspace{-6mm}
