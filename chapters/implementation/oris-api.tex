@@ -16,7 +16,7 @@ Accept: */*
     \end{minted}
 \end{listing}
 
-V nové aplikaci jsou využity 4 z nabízených metod. Konkrétně se jedná o metody \mintinline{text}|getEvent|, \mintinline{text}|getEventList|, \mintinline{text}|getRegistration| a \mintinline{text}|createEntry|. Metoda \mintinline{text}|getEvent| se využívá pro načtení informací o závodě při vytváření nové události, \mintinline{text}|getEventList| se volá při hromadné kontrole času uzávěrky přihlášek a zbývající dvě metody \mintinline{text}|getRegistration| a \mintinline{text}|createEntry| se podílejí na~odesílání přihlášek do IS ORIS.
+V nové aplikaci jsou využity tři z nabízených metod. Konkrétně se jedná o metody \mintinline{text}|getEvent|, \mintinline{text}|getEventList| a \mintinline{text}|createEntry|. Metoda \mintinline{text}|getEvent| se využívá pro načtení informací o závodě při~vytváření nové události, \mintinline{text}|getEventList| se volá při hromadné kontrole času uzávěrky přihlášek a metoda \mintinline{text}|createEntry| se podílí na~odesílání přihlášek do IS ORIS.
 
 \subsubsection{Importování nového závodu}
 Jak již bylo zmíněno, při přidávání nového závodu je možné využít automatické načítání informací z celorepublikového systému. Procesy vykonávané v rámci této funkcionality lze rozdělit na~4~logické fáze:
@@ -27,7 +27,7 @@ Jak již bylo zmíněno, při přidávání nového závodu je možné využít 
     \item Načtení zpracovaných dat do formuláře
 \end{enumerate}
 
-V rámci první fáze uživatel vyplní vstupní pole pro ORIS ID ve formuláři a klikne na tlačítko \emph{Importovat závod}. Kliknutím na uvedené tlačítko se spustí mechanismus, který na ORIS API pošle požadavek o zaslání dat týkající se závodu s vyplněným ORIS ID. Příklad validního požadavku a následné odpovědi, je na výpisu kódu \ref{listing:get-event-request} respektive \ref{listing:get-event-response}.
+V rámci první fáze uživatel vyplní vstupní pole pro ORIS ID ve formuláři a klikne na tlačítko \emph{Importovat závod}. Kliknutím na uvedené tlačítko se spustí mechanismus, který na ORIS API pošle požadavek o zaslání dat týkající se závodu s odpovídajícím ORIS ID. Příklad validního požadavku je na výpisu kódu \ref{listing:get-event-request} a následná odpověď na výpisu kódu \ref{listing:get-event-response}.
 
 \begin{listing}[h]
     \caption{Požadavek na získání informací o závodu}\label{listing:get-event-request}

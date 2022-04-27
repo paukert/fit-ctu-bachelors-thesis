@@ -6,13 +6,13 @@ Monolitické aplikace nejsou v~dnešní době již tak populární, jako tomu by
 Výběr této architektury však neznamená, že by nemohla být aplikace vnitřně žádným způsobem členěna. Nějaká forma rozdělení je naopak i žádoucí, aby se oddělila odpovědnost a vznikla určitá forma abstrakce nad jednotlivými částmi systému. Díky tomu je například možné vyměnit datové úložiště bez dalších (nebo s minimálním počtem) změn v částech, které se zabývají uživatelským rozhraním nebo obsahují samotnou logiku aplikace. Jednou z možností takového strukturování je využití architektury MVC, která je podrobněji představena v sekci \ref{section:mvc}.
 
 \subsection{MVC architektura}\label{section:mvc}
-Následující část textu vychází ze zdrojů \cite{it_network_mvc, mdn_mvc}. Architektura MVC (zkratka pro model–view–controller) odděluje datový model aplikace od řídící logiky a prezentační vrstvy s uživatelským rozhraním. Nejvíce se její použití rozšířilo u webových aplikací, poněvadž je součástí i mnoha webových frameworků. Na MVC architektuře jsou například založeny frameworky Laravel a Symfony, ASP.NET MVC framework a mnoho dalších.
+Následující část textu vychází ze zdrojů \cite{it_network_mvc, mdn_mvc}. Architektura model–view–controller odděluje datový model aplikace od řídící logiky a prezentační vrstvy s uživatelským rozhraním. Nejvíce se její použití rozšířilo u webových aplikací, poněvadž je součástí i mnoha webových frameworků. Na MVC architektuře jsou například založeny frameworky Laravel a Symfony, ASP.NET MVC framework a mnoho dalších.
 
-MVC architektura se tedy skládá ze tří částí. Vrstva modelů definuje s jakými daty bude aplikace pracovat. Může také obsahovat validační pravidla pro tato data, případně i další funkce, které se váží k danému modelu. Příkladem by mohla být funkce na výpočet věku z informace o datu narození. Při využití objektově relačního mapování (ORM) kopírují modely z velké části strukturu tabulek v databázi. Jeden model typicky představuje konkrétní tabulku a jednotlivé atributy modelu představují sloupce dané tabulky.
+MVC architektura se tedy skládá ze tří částí. Vrstva modelů definuje s jakými daty bude aplikace pracovat. Může také obsahovat validační pravidla pro tato data, případně i další funkce, které se váží k danému modelu. Takovým příkladem by mohla být funkce na výpočet věku z informace o datu narození. Při využití objektově relačního mapování (ORM) kopírují modely z velké části strukturu tabulek v databázi. Jeden model typicky představuje konkrétní tabulku a jeho atributy představují sloupce dané tabulky.
 
-Pohledy (dále také jako „views“) se starají o zobrazení dat uživateli. V případě webových aplikací bývá součástí pohledu šablona obsahující značkovací jazyk HTML, do které jsou následně vkládána data z modelů.
+Pohledy se starají o zobrazení dat uživateli. V případě webových aplikací bývá součástí pohledu šablona obsahující značkovací jazyk HTML, do které jsou následně vkládána data z modelů.
 
-Controllery obsahují logiku, jež se stará o načítání dat z modelů a jejich aktualizaci v závislosti na vstupu od uživatele. Propojují všechny ostatní vrstvy do funkčního celku.
+Poslední částí jsou controllery, jež se starají o načítání dat z modelů a jejich aktualizaci v závislosti na vstupu od uživatele. Propojují všechny ostatní vrstvy do funkčního celku.
 
 \begin{figure}[h]
 	\caption{Životní cyklus požadavku}

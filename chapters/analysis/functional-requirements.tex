@@ -1,5 +1,5 @@
 \section{Funkční požadavky}
-Funkční požadavky popisují požadované funkcionality systému. Mohou specifikovat, jakým způsobem bude uživatel moci pracovat se systémem, jaké procesy by měl systém podporovat a~například jaké budou vstupy a~výstupy těchto procesů. \cite{requirements}
+Funkční požadavky popisují požadované funkcionality systému. Mohou například specifikovat, jakým způsobem bude uživatel moci pracovat se systémem, jaké procesy by měl systém podporovat a~jaké budou vstupy a~výstupy těchto procesů. \cite{requirements}
 
 \begin{enumerate}[label=\textcolor{decoration}{\textbf{F\arabic*}}, leftmargin=6mm]
 	\myItem{evidence a~správa uživatelů}
@@ -29,7 +29,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 
 	Samotné zadání události do~systému bude umožněno ručním vyplněním všech požadovaných údajů nebo~automatickým importem z~informačního systému Českého svazu orientačních sportů pomocí unikátního identifikátoru závodu.
 
-	Na~hlavní stránce systému by se měly zobrazovat závody a tréninky s~nejbližší uzávěrkou přihlášek. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému (taková událost bude následně vizuálně od~nezrušených událostí odlišena a~nebude možné se na~ni dále přihlašovat).
+	Na~hlavní stránce systému by se měly zobrazovat závody a tréninky s~nejbližší uzávěrkou přihlášek. V~zadaných trénincích a~závodech bude možné vyhledávat a~filtrovat a~zadanou událost musí být možno zrušit bez~odstraňování ze~systému. Taková událost bude následně od~nezrušených událostí vizuálně odlišena a~nebude možné se na~ni dále přihlašovat.
 
 	\myItem{přihlašování na~závody a~tréninky}
 	Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu. Svou účast mohou uživatelé do~konce uzávěrky přihlášek také odřeknout.
@@ -37,7 +37,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou specif
 	\myItem{synchronizace přihlášek}
 	Po~skončení termínu přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do~IS~ORIS přes~jeho API. Tato možnost bude ze~zřejmých důvodů dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
 
-	\myItem{e-mailová upozornění}
+	\myItem{e-mailová upozornění --- TODO: asi odebrat}
 	Systém bude umožňovat při~přidávání události odeslat informační e-mail se základními informacemi o~dané události. E-mail bude odeslán pouze těm registrovaným uživatelům, kteří si ve~svém nastavení povolili zasílání e-mailových upozornění.
 
 	\myItem{oznámení}
@@ -59,7 +59,7 @@ Každému uživateli bude náležet právě jedna z~následujících uživatelsk
 			\item přihlašovat a~odhlašovat se z~tréninků a~závodů
 			\item psát komentáře k~jednotlivým tréninkům a~závodům a~následně je i~upravovat
 			\item měnit svou e-mailovou adresu a~heslo pro~přihlášení do~systému
-			\item nastavit si zasílání e-mailových upozornění na~nově přidané události do~systému
+			\item nastavit si zasílání e-mailových upozornění na~nově přidané události do~systému --- TODO
 		\end{itemize}
 	\end{itemize}
 	\item trenér

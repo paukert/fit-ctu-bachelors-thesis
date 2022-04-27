@@ -36,7 +36,7 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\myItem{přihlášení a~odhlášení z~aplikace}
 	Nepřihlášený uživatel bude při~pokusu o~přístup do~systému vyzván k~přihlášení.
 	\begin{enumerateNumbers}
-		\item Nepřihlášený uživatel zadá svou e-mailovou adresu a~heslo a~klikne na~tlačítko \emph{Přihlásit}.
+		\item Nepřihlášený uživatel zadá své registrační číslo a~heslo a~klikne na~tlačítko \emph{Přihlásit}.
 		\item Pokud přihlášení proběhlo úspěšně, bude uživatel přesměrován na~hlavní stránku aplikace nebo~na~stránku, na~kterou se snažil před~přihlášením přistoupit.
 		\item Přihlášený uživatel má naopak možnost se ze~systému odhlásit kliknutím na~položku \emph{Odhlásit} v~hlavní nabídce.
 	\end{enumerateNumbers}
@@ -57,7 +57,7 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 			\item seznamu závodů/tréninků (viz~\ref{uc:listevents}).
 			\item hlavní stránky, kde se zobrazuje 5~závodů a 3 tréninky, u~kterých nejdříve končí uzávěrka přihlášek.
 		\end{enumerate}
-		\item Přechod na~stránku se~všemi evidovanými informacemi o~události (viz~\ref{f:events}) proběhne po~kliknutí na~název události v~jednom ze~seznamů uvedených výše.
+		\item Přechod na~stránku se~všemi evidovanými informacemi o~události proběhne po~kliknutí na~název události v~jednom ze~seznamů uvedených výše.
 	\end{enumerateNumbers}
 
 	\myItem{přihlášení na~událost}
@@ -72,7 +72,7 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	Odhlášení z~události je možné provést pouze pokud nebyla událost zrušena, neproběhla uzávěrka přihlášek a~pokud je daný uživatel na~danou událost přihlášený.
 	\begin{enumerateNumbers}
 		\item Přihlášený uživatel přejde na~stránku s~detailními informacemi o~události (viz~\ref{uc:eventdetail}).
-		\item Účast na~události uživatel odřekne kliknutím na~tlačítko \emph{Odhlásit}.
+		\item Účast na~události uživatel odřekne kliknutím na~tlačítko \emph{Odhlásit} a potvrzením následně zobrazeného dialogu.
 	\end{enumerateNumbers}
 	\newpage
 
@@ -85,7 +85,7 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\end{enumerateNumbers}
 
 	\myItem{úprava osobních údajů a~preferencí}
-	Přihlášený uživatel si může změnit svou e-mailovou adresu, heslo a~povolit (zakázat) zasílání informačních e-mailů.
+	Přihlášený uživatel si může změnit svou e-mailovou adresu, heslo a~povolit (zakázat) zasílání informačních e-mailů. --- TODO
 	\begin{enumerateNumbers}
 		\item Přihlášený uživatel klikne na~položku \emph{Nastavení} v~hlavní nabídce.
 		\item Po~upravení požadovaných údajů a~preferencí klikne na~tlačítko \emph{Uložit změny}.
@@ -107,11 +107,10 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\end{enumerateNumbers}
 
 	\myItem{synchronizace přihlášek}
-	Role trenér v~systému sama o~sobě nestačí pro~odeslání přihlášek do~IS~ORIS. Je zapotřebí, aby uživatel měl také zřízený účet v~IS~ORIS a~měl práva na~přihlašování závodníků klubu.
+	Role trenér v~tomto systému sama o~sobě nestačí pro~odeslání přihlášek do~IS~ORIS. Je zapotřebí, aby uživatel měl také zřízený účet v~IS~ORIS a~měl práva na~přihlašování závodníků klubu.
 	\begin{enumerateNumbers}
-		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce a~následně vybere možnost \emph{Synchronizace přihlášek}.
-		\item Na~zobrazené stránce vybere požadovanou událost a~zadá přístupové údaje do~IS~ORIS.
-		\item Přihlášky evidované u~dané události budou odeslány po~kliknutí na~tlačítko \emph{Synchronizovat přihlášky}.
+		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce, vybere závod, jehož přihlášky si přeje odeslat, a vyplní své přístupové údaje do~IS~ORIS.
+		\item Přihlášky evidované u~dané události budou odeslány po~kliknutí na~tlačítko \emph{Odeslat přihlášky}.
 	\end{enumerateNumbers}
 
 	\myItem{vytvoření, úprava a smazání oznámení}
@@ -127,13 +126,13 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\begin{enumerateNumbers}
 		\item Administrátor klikne na~položku \emph{Administrace} v~hlavní nabídce a~následně vybere ze~seznamu uživatele, kterého si přeje upravit.
 		\item Po~upravení požadovaných informací klikne na~tlačítko \emph{Uložit změny}.
-		\item Anonymizaci uživatele lze provést kliknutím na~tlačítko \emph{Anonymizovat uživatele}.
+		\item Anonymizaci uživatele lze provést kliknutím na~tlačítko \emph{Anonymizovat člena}. --- TODO
 	\end{enumerateNumbers}
 
 \end{enumerate}
 
 \subsection{Pokrytí funkčních požadavků v případech užití}
-V~tabulce \ref{table:use-cases} je zachyceno pokrytí funkčních požadavků v~jednotlivých případech užití. Symbol~\Checkmark říká, že příslušný funkční požadavek je součástí daného případu užití.
+V~tabulce \ref{table:use-cases} je zachyceno pokrytí funkčních požadavků v~jednotlivých případech užití. Symbol~\Checkmark říká, že příslušný funkční požadavek je součástí daného případu užití. --- TODO
 
 \begin{table}[h]
 	\centering
