@@ -5,7 +5,7 @@ Testování proběhlo za osobní přítomnosti a zúčastnily se ho celkem 4 oso
 
 \section{Testovací scénáře}\label{test-cases}
 
-\subsection{Registrace a přihlášení do systému}
+\subsection{Registrace a přihlášení do systému}\label{test-case-1}
 \begin{description}
     \item[Modelová situace] \hfill \\
         Představte si, že jste nový člen klubu a chcete získat přístup do webové aplikace.
@@ -18,7 +18,7 @@ Testování proběhlo za osobní přítomnosti a zúčastnily se ho celkem 4 oso
         \end{enumerate}
 \end{description}
 
-\subsection{Změna kontaktního e-mailu a hesla}
+\subsection{Změna kontaktního e-mailu a hesla}\label{test-case-2}
 \begin{description}
     \item[Modelová situace] \hfill \\
         Na váš oblíbený internetový obchod zaútočili hackeři a ukradli údaje ke stovkám účtů. Bohužel e-shop využíval k hashování hesel zastaralý mechanismus a byl vám z tohoto důvodu ukraden i e-mail, ke kterému jste používali stejné heslo. Nyní si chcete v systému nastavit novou e-mailovou adresu a změnit přihlašovací heslo.
@@ -31,7 +31,7 @@ Testování proběhlo za osobní přítomnosti a zúčastnily se ho celkem 4 oso
 \end{description}
 
 \newpage
-\subsection{Přidání nového závodu a jeho následná úprava}
+\subsection{Přidání nového závodu a jeho následná úprava}\label{test-case-3}
 \begin{description}
     \item[Modelová situace] \hfill \\
         Představte si, že jste trenér klubu KOB Ústí nad Orlicí a chcete přidat do systému nový závod Východočeského poháru.
@@ -45,7 +45,7 @@ Testování proběhlo za osobní přítomnosti a zúčastnily se ho celkem 4 oso
         \end{enumerate}
 \end{description}
 
-\subsection{Přihlášení na závod a napsání komentáře}
+\subsection{Přihlášení na závod a napsání komentáře}\label{test-case-4}
 \begin{description}
     \item[Modelová situace] \hfill \\
         Jako člen klubu se chcete přihlásit na nadcházející závod Východočeského poháru a napsat k němu komentář.
@@ -58,8 +58,13 @@ Testování proběhlo za osobní přítomnosti a zúčastnily se ho celkem 4 oso
         \end{enumerate}
 \end{description}
 
-\section{Průběh}
-TODO
+\section{Průběh a výsledky}
+První modelová situace ze scénáře \ref{test-case-1} se zabývá registrací a přihlášením do systému. Všichni testeři se pomocí položky v hlavní nabídce případně s využitím tlačítka na uvítací obrazovce bez~problému dostali na stránku s registračním formulářem. Samotný proces registrace do systému a i následného přihlášení považovali respondenti za jednoduchý.
 
-\section{Výsledky}
-TODO
+Scénář \ref{test-case-2} měl za úkol ověřit, zda uživatelé bez potíží najdou sekci s nastavením, kde si mohou změnit některé ze svých údajů. Bod ve scénáři zmiňuje, aby přešli pomocí hlavní nabídky na stránku \emph{Nastavení}. Jeden z testerů, jehož považuji za průměrně zdatného uživatele počítače, chvilku přemýšlel, jak se do nastavení dostat, nicméně i jemu se to nakonec podařilo. Pro~rozbalovací menu byla z tohoto důvodu nakonec zvolena jiná ikona, kterou oslovení respondenti hodnotí jako názornější.
+
+Přidání a následná úprava závodu byly testovány v rámci scénáře \ref{test-case-3}. Rozložení administrace přišlo respondentům přehledné a s vyhledáním možnosti pro přidání nového závodu neměl nikdo problém. Načtení informací o události z IS ORIS nedělalo uživatelům taktéž obtíže a i následná úprava závodu není dle jejich slov složitá.
+
+Poslední modelová situace ze scénáře \ref{test-case-4} ověřovala intuitivnost uživatelského rozhraní při~přihlašování se na událost. Přechod na stránku s detailními informacemi o závodu nečinil potíže žádnému z respondentů. Při samotném přihlašování na událost jeden z testerů navrh, aby se mu v nabídce zobrazovaly pouze kategorie, jež jsou pro něj relevantní (tj. aby se mužům nezobrazovaly kategorie pro ženy a aby proběhlo filtrování na základě věku přihlašované osoby). Tuto funkcionalitu jsem sám plánoval v budoucnu naimplementovat s využitím ORIS API, které nabízí metodu \mintinline{text}|getValidClasses| vracející seznam platných kategorií pro konkrétního uživatele a závod. Kromě této připomínky hodnotili respondenti proces přihlašování a psaní komentářů jako jednoduchý.
+
+Aplikaci oslovení testeři až na dvě výjimky popsané výše hodnotili jako přehlednout a uživatelsky přívětivou. Jedna ze dvou připomínek již byla zapracována a druhá bude vyřešena v rámci budoucího vylepšení integrace se systémem Českého svazu orientačních sportů ORIS.
