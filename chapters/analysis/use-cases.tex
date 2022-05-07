@@ -3,6 +3,7 @@ Tato podkapitola se věnuje jednotlivým případům užití, které představuj
 
 \subsection{Aktéři}
 Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bude pracovat se systémem. V~naší aplikaci uvažujeme celkem čtyři různé aktéry~–~přihlášeného a~nepřihlášeného uživatele, administrátora a~trenéra. Vztahy mezi těmito aktéry jsou popsány v~následujícím textu a~jsou znázorněny na~obrázku \ref{figure:actors}.
+
 \begin{description}
 	\item[Nepřihlášený uživatel]\hfill\newline
 	Nepřihlášený uživatel má přístup pouze k~přihlášení a~registraci. Po~provedení první uvedené akce se stane přihlášeným uživatelem.
@@ -84,11 +85,11 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 		\item Své komentáře má uživatel možnost upravit kliknutím na~ikonku pro~úpravu vedle konkrétního komentáře. To načte napsaný komentář do~textového pole a~po~jeho úpravě dojde k~uložení kliknutím na~tlačítko \emph{Upravit komentář}.
 	\end{enumerateNumbers}
 
-	\myItem{úprava osobních údajů a~preferencí}
-	Přihlášený uživatel si může změnit svou e-mailovou adresu, heslo a~povolit (zakázat) zasílání informačních e-mailů. --- TODO
+	\myItem{úprava osobních údajů}
+	Přihlášený uživatel si může změnit svou e-mailovou adresu a heslo, pomocí něhož se přihlašuje do systému.
 	\begin{enumerateNumbers}
 		\item Přihlášený uživatel klikne na~položku \emph{Nastavení} v~hlavní nabídce.
-		\item Po~upravení požadovaných údajů a~preferencí klikne na~tlačítko \emph{Uložit změny}.
+		\item Po~upravení požadovaných údajů klikne na~tlačítko \emph{Uložit změny}.
 	\end{enumerateNumbers}
 
 	\myItem{přidání události}
@@ -109,11 +110,11 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 	\myItem{synchronizace přihlášek}
 	Role trenér v~tomto systému sama o~sobě nestačí pro~odeslání přihlášek do~IS~ORIS. Je zapotřebí, aby uživatel měl také zřízený účet v~IS~ORIS a~měl práva na~přihlašování závodníků klubu.
 	\begin{enumerateNumbers}
-		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce, vybere závod, jehož přihlášky si přeje odeslat, a vyplní své přístupové údaje do~IS~ORIS.
-		\item Přihlášky evidované u~dané události budou odeslány po~kliknutí na~tlačítko \emph{Odeslat přihlášky}.
+		\item Trenér klikne na~položku \emph{Administrace} v~hlavní nabídce a vybere závod, jehož přihlášky si přeje odeslat.
+		\item Přihlášky evidované u~dané události budou odeslány po vyplnění přístupových údajů do~IS~ORIS a~kliknutí na~tlačítko \emph{Odeslat přihlášky}.
 	\end{enumerateNumbers}
 
-	\myItem{vytvoření, úprava a smazání oznámení --- TODO}
+	\myItem{vytvoření, úprava a smazání oznámení --- TODO --- ještě doupravit}
 	Tento případ užití popisuje vytvoření, úpravu a~smazání oznámení.
 	\begin{enumerateNumbers}
 		\item Trenér na~hlavní stránce klikne na~ikonku pro~přidání nového oznámení nebo~na~ikonku pro~upravení již~existujícího oznámení.
@@ -132,26 +133,26 @@ Aktérem nebo~účastníkem nazýváme osobu (případně její roli), která bu
 \end{enumerate}
 
 \subsection{Pokrytí funkčních požadavků v případech užití}
-V~tabulce \ref{table:use-cases} je zachyceno pokrytí funkčních požadavků v~jednotlivých případech užití. Symbol~\Checkmark říká, že příslušný funkční požadavek je součástí daného případu užití. --- TODO
+V~tabulce \ref{table:use-cases} je zachyceno pokrytí funkčních požadavků v~jednotlivých případech užití. Symbol~\Checkmark říká, že příslušný funkční požadavek je součástí daného případu užití.
 
 \begin{table}[h]
 	\centering
 	\caption{\label{table:use-cases}Mapování funkčních požadavků na~případy užití}
-	\begin{tabularx}{0.95\textwidth}{|C||C|C|C|C|C|C|C|}
+	\begin{tabularx}{0.95\textwidth}{|C||C|C|C|C|C|C|}
 		\hline
-			 & F1 & F2 & F3 & F4 & F5 & F6 & F7 				\\ \hline\hline
-		UC1  & \Checkmark &    &    &    &    &    &    		\\ \hline
-		UC2  & \Checkmark &    &    &    &    &    &    		\\ \hline
-		UC3  &    & \Checkmark &    &    &    &    &    		\\ \hline
-		UC4  &    & \Checkmark &    &    &    &    &    		\\ \hline
-		UC5  &    &    & \Checkmark &    &    &    &    		\\ \hline
-		UC6  &    &    & \Checkmark &    &    &    &    		\\ \hline
-		UC7  &    &    &    &    &    &    & \Checkmark 		\\ \hline
-		UC8  & \Checkmark &    &    &    & \Checkmark &    &	\\ \hline
-		UC9  &    & \Checkmark &    &    & \Checkmark &    &	\\ \hline
-		UC10 &    & \Checkmark &    &    &    &    &    		\\ \hline
-		UC11 &    &    &    & \Checkmark &    &    &    		\\ \hline
-		UC12 &    &    &    &    &    & \Checkmark &    		\\ \hline
-		UC13 & \Checkmark &    &    &    &    &    &    		\\ \hline
+			 & F1 & F2 & F3 & F4 & F5 & F6            \\ \hline\hline
+		UC1  & \Checkmark &    &    &    &    &       \\ \hline
+		UC2  & \Checkmark &    &    &    &    &       \\ \hline
+		UC3  &    & \Checkmark &    &    &    &       \\ \hline
+		UC4  &    & \Checkmark &    &    &    &       \\ \hline
+		UC5  &    &    & \Checkmark &    &    &       \\ \hline
+		UC6  &    &    & \Checkmark &    &    &       \\ \hline
+		UC7  &    &    &    &    &    & \Checkmark    \\ \hline
+		UC8  & \Checkmark &    &    &    &    &       \\ \hline
+		UC9  &    & \Checkmark &    &    &    &       \\ \hline
+		UC10 &    & \Checkmark &    &    &    &       \\ \hline
+		UC11 &    &    &    & \Checkmark &    &       \\ \hline
+		UC12 &    &    &    &    & \Checkmark &       \\ \hline
+		UC13 & \Checkmark &    &    &    &    &       \\ \hline
 	\end{tabularx}
 \end{table}

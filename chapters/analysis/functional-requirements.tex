@@ -3,7 +3,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou např�
 
 \begin{enumerate}[label=\textcolor{decoration}{\textbf{F\arabic*}}, leftmargin=6mm]
 	\myItem{evidence a~správa uživatelů}
-	Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat registrační číslo, e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí registračního čísla a~zadaného hesla bude následně uživatel přistupovat do~systému. Kromě těchto základních údajů bude mít administrátor možnost uživateli nastavovat a~upravovat stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}).
+	Systém bude umožňovat registraci nových uživatelů, neregistrovaný uživatel nemá přístup do~systému. Při~registraci bude nutno zadat registrační číslo, e-mailovou adresu, heslo a~jméno a~příjmení člena klubu. Právě pomocí registračního čísla a~zadaného hesla bude následně uživatel přistupovat do~aplikace. Kromě těchto základních údajů bude mít administrátor možnost uživateli nastavovat a~upravovat stav osobního konta, typ členství (aktivní nebo~pasivní) a~roli (viz~sekce \ref{section:role}).
 
 	\myItem{evidence a~správa závodů a~tréninků\label{f:events}}
 	Dále systém bude umožňovat evidenci a~správu tréninků a~závodů (událostí). Konkrétně je potřeba mít možnost u~každé události evidovat:
@@ -33,10 +33,7 @@ Funkční požadavky popisují požadované funkcionality systému. Mohou např�
 	Na~událost evidovanou v~systému se mohou registrovaní uživatelé přihlásit, pokud dosud neproběhla uzávěrka přihlášek. Při~přihlášení si uživatelé musí navíc vybrat jednu z~nabízených kategorií, do~které se chtějí přihlásit, a~mohou volitelně sdělit, zdali mají možnost jet vlastním autem a~svést s~sebou i~další členy klubu. Svou účast mohou uživatelé do~konce uzávěrky přihlášek také odřeknout.
 
 	\myItem{synchronizace přihlášek}
-	Po~skončení termínu přihlášek bude mít trenér možnost odeslat všechny evidované přihlášky do~IS~ORIS přes~jeho API. Tato možnost bude ze~zřejmých důvodů dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
-
-	\myItem{e-mailová upozornění --- TODO: asi odebrat}
-	Systém bude umožňovat při~přidávání události odeslat informační e-mail se základními informacemi o~dané události. E-mail bude odeslán pouze těm registrovaným uživatelům, kteří si ve~svém nastavení povolili zasílání e-mailových upozornění.
+	Trenéři klubu budou mít možnost odeslat všechny přihlášky evidované u konkrétního závodu do~IS~ORIS přes~jeho API. Tato možnost bude ze~zřejmých důvodů dostupná pouze pro~závody, které jsou v~IS~ORIS evidované.
 
 	\myItem{oznámení}
 	Trenéři a~administrátoři systému budou mít možnost vytvořit oznámení, která se budou zobrazovat na~hlavní stránce systému.
@@ -57,7 +54,6 @@ Každému uživateli bude náležet právě jedna z~následujících uživatelsk
 			\item přihlašovat a~odhlašovat se z~tréninků a~závodů
 			\item psát komentáře k~jednotlivým tréninkům a~závodům a~následně je i~upravovat
 			\item měnit svou e-mailovou adresu a~heslo pro~přihlášení do~systému
-			\item nastavit si zasílání e-mailových upozornění na~nově přidané události do~systému --- TODO
 		\end{itemize}
 	\end{itemize}
 	\item trenér
@@ -66,7 +62,7 @@ Každému uživateli bude náležet právě jedna z~následujících uživatelsk
 		\item oproti roli registrovaný uživatel má právo:
 		\begin{itemize}
 			\item přidávat a~následně spravovat tréninky a~závody
-			\item odeslat evidované přihlášky do~IS~ORIS
+			\item odesílat evidované přihlášky do~IS~ORIS
 			\item psát a~upravovat svá oznámení
 		\end{itemize}
 	\end{itemize}

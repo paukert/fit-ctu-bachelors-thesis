@@ -2,9 +2,9 @@
 Proces zprovoznění aplikace může být mnohdy poměrně náročný a problémy způsobené vzájemnou nekompatibilitou jednotlivých verzí nástrojů rozhodně dokáží tento proces velice znepříjemnit. Podobným komplikacím můžeme v dnešní době naštěstí předcházet například díky balíčkovacím systémům a nástroji Docker, který bude představen v podkapitole \ref{docker}. Následně bude také popsáno, jak lze právě s jeho pomocí spustit vytvořenou aplikaci a taktéž bude přiblíženo, jakým způsobem je možné aplikaci zprovoznit na současně využívaných hostingových službách.
 
 \section{Docker}\label{docker}
-V dnešní době je Docker využíván jak při vývoji, tak při samotném nasazování aplikací do~produkčního prostředí. Jedná se o nástroj, který poskytuje odlehčenou formu virtualizace. K tomu využívá takzvané kontejnery, které zahrnují samotný kód aplikace, všechny její závislosti a i její nastavení. Na rozdíl od klasických virtualizací tyto kontejnery neobsahují operační systém a přímo pomocí Docker engine komunikují s hostitelským operačním systémem.
+V dnešní době je Docker využíván jak při vývoji, tak při samotném nasazování aplikací do~produkčního prostředí. Jedná se o nástroj, který poskytuje odlehčenou formu virtualizace. K tomu využívá takzvané kontejnery, které zahrnují samotný kód aplikace, všechny její závislosti a i její nastavení. Na rozdíl od klasických virtualizací tyto kontejnery neobsahují operační systém a přímo pomocí Docker engine komunikují s hostitelským operačním systémem. \cite{docker}
 
-Díky této vlastnosti jsou kontejnery nástroje Docker méně náročné na hardware než klasické virtualizace. Mezi další důležité vlastnosti patří větší bezpečnost, poněvadž aplikace v různých kontejnerech jsou od sebe izolovány, a přenositelnost, která zaručuje, že aplikace budou fungovat na různých strojích s nainstalovaných nástrojem Docker vždy stejně.
+Díky této vlastnosti jsou kontejnery nástroje Docker méně náročné na hardware než klasické virtualizace. Mezi další důležité vlastnosti patří větší bezpečnost, poněvadž aplikace v různých kontejnerech jsou od sebe izolovány, a přenositelnost, která zaručuje, že aplikace budou fungovat na různých strojích s nainstalovaných nástrojem Docker vždy stejně. \cite{docker}
 
 Ve chvíli, kdy se v rámci jednoho projektu využívá více různých kontejnerů, může s jejich správou pomoci nástroj Docker Compose, který se stará o jejich orchestraci. Jako hlavní konfigurační soubor využívá \mintinline{text}|docker-compose.yml|, v němž se definují a nastavují jednotlivé služby. Ty je následně možné spouštět a vypínat pomocí jediného příkazu.
 
@@ -15,7 +15,7 @@ Pro zprovoznění aplikace dle podstupu uvedeného v podkapitole \ref{deploy-ste
 	\item Docker Compose (nadstavba nad nástrojem Docker, taktéž popsána v sekci \ref{docker})
 \end{itemize}
 
-\section{Postup}\label{deploy-steps}
+\section{Postup pro zprovoznění}\label{deploy-steps}
 Díky nástroji Docker je zprovoznění aplikace velice jednoduché. Po~provedení níže uvedených kroků bude systém dostupný na adrese \mintinline{text}|https://localhost/|.
 
 \begin{enumerate}
@@ -29,7 +29,7 @@ Díky nástroji Docker je zprovoznění aplikace velice jednoduché. Po~proveden
 		\item v rámci migrací bude do databáze vložen administrátor se jménem \mintinline{text}|KUO9801| a heslem \mintinline{text}|KUO9801| a i několik dat pro číselníky disciplín a úrovní
 	\end{itemize}
 	\item testovací data obsahující další členy a události včetně přihlášek lze vygenerovat pomocí příkazu \mintinline{text}|docker-compose exec php php bin/console doctrine:fixtures:load --append|
-	\item naopak zastavit všechny kontejnery lze pomocí \mintinline{text}|docker-compose down --remove-orphans|
+	\item všechny kontejnery lze naopak zastavit pomocí \mintinline{text}|docker-compose down --remove-orphans|
 \end{enumerate}
 
 \section{Webhosting}
