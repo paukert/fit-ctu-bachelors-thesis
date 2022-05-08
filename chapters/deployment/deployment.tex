@@ -21,11 +21,11 @@ Díky nástroji Docker je zprovoznění aplikace velice jednoduché. Po~proveden
 \begin{enumerate}
 	\item sestavení kontejnerů příkazem \mintinline{text}|docker-compose build --pull --no-cache|
 	\begin{itemize}
-		\item instalace závislostí pomocí balíčkovacího systému Composer proběhne automaticky (v případě potřeby lze spustit i pomocí \mintinline{text}|docker-compose exec php php composer install|)
+		\item instalace závislostí pomocí balíčkovacího systému Composer proběhne automaticky
 	\end{itemize}
 	\item spuštění kontejnerů pomocí příkazu \mintinline{text}|docker-compose up -d|
 	\begin{itemize}
-		\item databázové migrace se spustí také automaticky (případně je lze spustit i ručně pomocí \mintinline{text}|docker-compose exec php php bin/console doctrine:migrations:migrate|)
+		\item databázové migrace se spustí také automaticky
 		\item v rámci migrací bude do databáze vložen administrátor se jménem \mintinline{text}|KUO9801| a heslem \mintinline{text}|KUO9801| a i několik dat pro číselníky disciplín a úrovní
 	\end{itemize}
 	\item testovací data obsahující další členy a události včetně přihlášek lze vygenerovat pomocí příkazu \mintinline{text}|docker-compose exec php php bin/console doctrine:fixtures:load --append|
@@ -33,4 +33,27 @@ Díky nástroji Docker je zprovoznění aplikace velice jednoduché. Po~proveden
 \end{enumerate}
 
 \section{Webhosting}
-TODO
+Již od počátku bylo cílem vyvinout aplikaci, která by se mohla provozovat na aktuálně využívaných hostingových službách, jakými jsou sdílený webhosting a databázový server MariaDB od~společnosti WEDOS. Z tohoto důvodu byl i specifikován nefunkční požadavek \ref{n:technologies}, který tento cíl reflektoval. S provozem webové aplikace na těchto službách, však přichází řada úskalí, neboť k webhostingu například není možné přistupovat přes SSH protokol. Jenom toto omezení způsobuje řadu komplikací, poněvadž je tímto například znemožněno instalovat závislosti pomocí balíčkovacího systému Composer nebo spouštět standardní způsobem databázové migrace.
+
+Pro zprovoznění vytvořené aplikace na produkčním serveru bylo tedy třeba provést několik dalších úprav a nastavení. Prvním krokem bylo přidání závislosti \mintinline{text}|symfony/apache-pack|, jež zajistila, že systém bude fungovat na webovém serveru Apache, který využívají sdílené webhostingy od společnosti WEDOS. S ohledem na omezení, která jsou kladena na tyto webhostingy, muselo být z vygenerovaného \mintinline{text}|.htaccess| souboru odebráno nepodporované nastavení, jež je na~výpisu kódu \ref{symfony-htaccess}. \cite{symfony_wedos}
+
+\begin{listing}[h]
+    \caption{Nepodporované nastavení ve vygenerovaném .htaccess souboru}\label{symfony-htaccess}
+    \begin{minted}{apacheconf}
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+    \end{minted}
+\end{listing}
+
+Další úpravy kódu bylo třeba udělat ve spojení s voláním PHP funkce \mintinline{text}|putenv()|, která je na~webhostingu zakázána. Poslední nutné nastavení spočívalo ve vytvoření dalšího \mintinline{text}|.htaccess| souboru s obsahem uvedeném na výpisu kódu \ref{redirect-htaccess} v kořenové složce projektu. Pravidlo uvedené v tomto souboru zajišťuje přesměrování požadavků na přístupový bod naší aplikace, kterým je soubor \mintinline{text}|index.php| umístěný ve složce \mintinline{text}|public| \cite{symfony_wedos}.
+
+\begin{listing}[h]
+    \caption{Obsah .htaccess souboru umístěného v kořenové složce projektu}\label{redirect-htaccess}
+    \begin{minted}{apacheconf}
+RewriteEngine On
+RewriteRule (.*) public/$1 [L]
+    \end{minted}
+\end{listing}
+
+Jak již bylo zmíněno, k webhostingu není možné přistupovat přes SSH protokol. Z tohoto důvodu je na něj nutné nahrát všechny soubory vytvořené aplikace včetně jejích závislostí ručně přes FTP protokol. Posledním nutným úkonem je vytvoření odpovídající struktury v databázi a přidání dat pro číselníky. Toho může být docíleno například spuštěním databázových migrací v lokálním prostředí, vytvořením zálohy této databáze a následným importováním této zálohy do produkčního prostředí.
