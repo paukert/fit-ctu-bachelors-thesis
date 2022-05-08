@@ -20,11 +20,11 @@ Díky nástroji Docker je zprovoznění aplikace velice jednoduché. Po~proveden
 
 \begin{enumerate}
 	\item sestavení kontejnerů příkazem \mintinline{text}|docker-compose build --pull --no-cache|
-	\begin{itemize}
+	\begin{itemize}[topsep=0pt]
 		\item instalace závislostí pomocí balíčkovacího systému Composer proběhne automaticky
 	\end{itemize}
 	\item spuštění kontejnerů pomocí příkazu \mintinline{text}|docker-compose up -d|
-	\begin{itemize}
+	\begin{itemize}[topsep=0pt]
 		\item databázové migrace se spustí také automaticky
 		\item v rámci migrací bude do databáze vložen administrátor se jménem \mintinline{text}|KUO9801| a heslem \mintinline{text}|KUO9801| a i několik dat pro číselníky disciplín a úrovní
 	\end{itemize}
@@ -46,13 +46,16 @@ Pro zprovoznění vytvořené aplikace na produkčním serveru bylo tedy třeba 
     \end{minted}
 \end{listing}
 
+\vspace{-2mm}
+
 Další úpravy kódu bylo třeba udělat ve spojení s voláním PHP funkce \mintinline{text}|putenv()|, která je na~webhostingu zakázána. Poslední nutné nastavení spočívalo ve vytvoření dalšího \mintinline{text}|.htaccess| souboru s obsahem uvedeném na výpisu kódu \ref{redirect-htaccess} v kořenové složce projektu. Pravidlo uvedené v tomto souboru zajišťuje přesměrování požadavků na přístupový bod naší aplikace, kterým je soubor \mintinline{text}|index.php| umístěný ve složce \mintinline{text}|public| \cite{symfony_wedos}.
 
 \begin{listing}[h]
     \caption{Obsah .htaccess souboru umístěného v kořenové složce projektu}\label{redirect-htaccess}
     \begin{minted}{apacheconf}
 RewriteEngine On
-RewriteRule (.*) public/$1 [L]
+RewriteCond %{REQUEST_URI} !^public
+RewriteRule ^(.*)$ public/$1 [L]
     \end{minted}
 \end{listing}
 
