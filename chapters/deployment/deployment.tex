@@ -4,7 +4,7 @@ Proces zprovoznění aplikace může být mnohdy poměrně náročný a problém
 \section{Docker}\label{docker}
 V dnešní době je Docker využíván jak při vývoji, tak při samotném nasazování aplikací do~produkčního prostředí. Jedná se o nástroj, který poskytuje odlehčenou formu virtualizace. K tomu využívá takzvané kontejnery, které zahrnují samotný kód aplikace, všechny její závislosti a i její nastavení. Na rozdíl od klasických virtualizací tyto kontejnery neobsahují operační systém a přímo pomocí Docker engine komunikují s hostitelským operačním systémem. \cite{docker}
 
-Díky této vlastnosti jsou kontejnery nástroje Docker méně náročné na hardware než klasické virtualizace. Mezi další důležité vlastnosti patří větší bezpečnost, poněvadž aplikace v různých kontejnerech jsou od sebe izolovány, a přenositelnost, která zaručuje, že aplikace budou fungovat na různých strojích s nainstalovaných nástrojem Docker vždy stejně. \cite{docker}
+Díky této vlastnosti jsou kontejnery nástroje Docker méně náročné na hardware než klasické virtualizace. Mezi další důležité vlastnosti patří větší bezpečnost, poněvadž aplikace z různých kontejnerů jsou od sebe izolovány, a přenositelnost, která zaručuje, že aplikace budou fungovat na různých strojích s nainstalovaných nástrojem Docker vždy stejně. \cite{docker}
 
 Ve chvíli, kdy se v rámci jednoho projektu využívá více různých kontejnerů, může s jejich správou pomoci nástroj Docker Compose, který se stará o jejich orchestraci. Jako hlavní konfigurační soubor využívá \mintinline{text}|docker-compose.yml|, v němž se definují a nastavují jednotlivé služby. Ty je následně možné spouštět a vypínat pomocí jediného příkazu.
 
