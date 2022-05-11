@@ -9,7 +9,7 @@ Díky této vlastnosti jsou kontejnery nástroje Docker méně náročné na har
 Ve chvíli, kdy se v rámci jednoho projektu využívá více různých kontejnerů, může s jejich správou pomoci nástroj Docker Compose, který se stará o jejich orchestraci. Jako hlavní konfigurační soubor využívá \mintinline{text}|docker-compose.yml|, v němž se definují a nastavují jednotlivé služby. Ty je následně možné spouštět a vypínat pomocí jediného příkazu.
 
 \section{Požadovaný software}
-Pro zprovoznění aplikace dle podstupu uvedeného v podkapitole \ref{deploy-steps} je zapotřebí mít nainstalován následující software:
+Pro zprovoznění aplikace dle postupu uvedeného v podkapitole \ref{deploy-steps} je zapotřebí mít nainstalován následující software:
 \begin{itemize}
 	\item Docker (popsán v předchozí sekci \ref{docker})
 	\item Docker Compose (nadstavba nad nástrojem Docker, taktéž popsána v sekci \ref{docker})
@@ -48,7 +48,7 @@ Pro zprovoznění vytvořené aplikace na produkčním serveru bylo tedy třeba 
 
 \vspace{-2mm}
 
-Další úpravy kódu bylo třeba udělat ve spojení s voláním PHP funkce \mintinline{text}|putenv()|, která je na~webhostingu zakázána. Poslední nutné nastavení spočívalo ve vytvoření dalšího \mintinline{text}|.htaccess| souboru s obsahem uvedeném na výpisu kódu \ref{redirect-htaccess} v kořenové složce projektu. Pravidlo uvedené v tomto souboru zajišťuje přesměrování požadavků na přístupový bod naší aplikace, kterým je soubor \mintinline{text}|index.php| umístěný ve složce \mintinline{text}|public| \cite{symfony_wedos}.
+Další úpravy kódu bylo třeba udělat ve spojení s voláním PHP funkce \mintinline{text}|putenv()|, která je na~webhostingu zakázána. Poslední nutné nastavení spočívalo ve vytvoření dalšího \mintinline{text}|.htaccess| souboru s obsahem uvedeném na výpisu kódu \ref{redirect-htaccess} v kořenové složce projektu. Pravidlo uvedené v tomto souboru zajišťuje přesměrování požadavků na přístupový bod naší aplikace, kterým je soubor \mintinline{text}|index.php| umístěný ve složce \mintinline{text}|public|. \cite{symfony_wedos}
 
 \begin{listing}[h]
     \caption{Obsah .htaccess souboru umístěného v kořenové složce projektu}\label{redirect-htaccess}
