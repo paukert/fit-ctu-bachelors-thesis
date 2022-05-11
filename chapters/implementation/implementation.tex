@@ -1,13 +1,27 @@
 \chapter{Implementace}
-Tato kapitola se zabývá procesem implementace nové webové aplikace. Nejdříve budou představeny nástroje, které jsem při vývoji využíval. Následně budou přiblíženy vybrané části implementace a nakonec budou diskutovány další možná rozšíření.
+Tato kapitola se zabývá procesem implementace nové webové aplikace. Nejdříve budou představeny nástroje, které jsem při vývoji využíval, a bude popsána struktura projektu. Následně budou přiblíženy vybrané části implementace a nakonec budou diskutovány další možná rozšíření.
 
 \input{chapters/implementation/used-software.tex}
 
+\section{Struktura projektu}
+Projekt následuje standardní adresářovou strukturu Symfony aplikací a tedy orientace by lidem, kteří se již s nějakou aplikací vytvořenou v Symfony frameworku setkali, neměla dělat problém.
+
+\dirtree{%
+    .1 .
+    .1 config\DTcomment{konfigurační soubory aplikace}.
+    .1 public\DTcomment{kaskádové styly, kód v jazyku JavaScript, ikony}.
+    .1 src.
+    .2 Controller\DTcomment{controllery}.
+    .2 Form\DTcomment{formuláře}.
+    .2 Entity\DTcomment{modely}.
+    .1 templates\DTcomment{šablony stránek}.
+    .1 composer.json\DTcomment{soubor se seznamem závislostí}.
+}
+
 \section{Ukázky vybraných částí}
 V následující sekci je popsáno několik vybraných částí z implementované aplikace, které jsou pro~vytvořený systém důležité nebo jsou nějakým způsobem zajímavé. Jako první bude představen způsob komunikace s informačním systémem Českého svazu orietačních sportů ORIS, poté bude popsána tvorba formuláře pro přidání nové události a jako poslední bude demonstrován způsob zobrazení aplikace na různých typech klientských zařízení.
-\newpage
+
 \input{chapters/implementation/oris-api.tex}
 \input{chapters/implementation/forms.tex}
 \input{chapters/implementation/responsive-design.tex}
-\newpage
 \input{chapters/implementation/possible-extensions.tex}

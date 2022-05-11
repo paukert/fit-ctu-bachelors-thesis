@@ -4,8 +4,11 @@ Jednou z nových funkcí oproti současně používanému systému je napojení 
 \subsubsection{Webové API}\label{implementation:api}
 Zkratku API lze do češtiny přeložit jako „rozhraní pro programování aplikací“. Z tohoto slovního spojení však člověk, který se v oblasti informačních technologií nepohybuje, pravděpodobně stále nebude mít moc představu, k čemu to API vlastně je. V případě webových aplikací se jedná o rozhraní, které umožňuje komunikaci mezi různými systémy nebo různými částmi systému. Jedna strana musí toto rozhraní, jež se může skládat z více koncových bodů (endpointů), poskytovat a druhá následně může na některý z těchto endpointů posílat povolené instrukce, a tím s první interagovat. V dnešní době je pro API orientovaná na data nejčastěji využívána architektura REST, avšak informační systém ORIS své API založil na vlastní architektuře, jejíž popis je součástí sekce \ref{implementation:oris-api}. \cite{api}
 
+\subsubsection{HTTP}\label{http}
+S webovými API je úzce spojen protokol HTTP. Jedná se o protokol aplikační vrstvy, který byl navržen pro komunikaci mezi webovým serverem a webovým prohlížečem. Je založen na~principu klient--server, kdy klient iniciuje vznik spojení za účelem zaslání požadavku a následně čeká na~odpověď od serveru. Každý HTTP požadavek mimo dalších informací obsahuje i název metody, která může specifikovat, jakým způsobem bude požadavek zpracován. Mezi nejdůležitější metody patří metoda GET, která slouží pro získání dat, a metoda POST, jež se nejčastěji využívá při~odeslání dat. \cite{http}
+
 \subsubsection{ORIS API}\label{implementation:oris-api}
-Veškerá komunikace s ORIS API probíhá pomocí GET požadavků. Každý požadavek musí obsahovat query parametr s názvem metody a názvem formátu, ve kterém chceme data obdržet. V závislosti na vybrané metodě může být nutné uvést i další query parametry, které jsou pro~ni specifické. V současné době je podporováno 28 různých metod a 2 datové formáty (JSON a XML). Příklad požadavku na získání všech klubů v Českém svazu orientačních sportů ve formátu JSON můžeme vidět na výpisu kódu \ref{listing:api}. 
+I přes zvyklosti uvedené v sekci \ref{http} probíhá komunikace s ORIS API pouze pomocí GET požadavků. Každý požadavek musí obsahovat query parametr s názvem metody a názvem formátu, ve kterém chceme data obdržet. V závislosti na vybrané metodě může být nutné uvést i další query parametry, které jsou pro~ni specifické. V současné době je podporováno 28 různých metod a 2 datové formáty (JSON a XML). Příklad požadavku na získání všech klubů v Českém svazu orientačních sportů ve formátu JSON můžeme vidět na výpisu kódu \ref{listing:api}. 
 
 \begin{listing}[h]
     \caption{Požadavek na získání všech klubů v ČSOS}\label{listing:api}
@@ -63,6 +66,8 @@ Date: Sun, 17 Apr 2022 12:06:08 GMT
 \end{listing}
 
 Z přijatých dat je následně pomocí speciální třídy sestaven nový objekt typu \mintinline{text}|Race|, jenž je poté předán formuláři. Ten si již jen načte data z tohoto objektu a výsledná stránka včetně předvyplněných hodnot je zaslána uživateli.
+
+\newpage
 
 \subsubsection{Odesílání přihlášek}
 Pro odeslání přihlášek do IS ORIS je zapotřebí poslat GET požadavek, který kromě názvu metody a formátu dat obsahuje i query parametry \mintinline{text}|username|, \mintinline{text}|password|, \mintinline{text}|class| a \mintinline{text}|clubuser|. Takovýto požadavek je potřeba poslat pro každou evidovanou přihlášku, poněvadž systém ORIS nepodporuje posílání informací o více přihláškách najednou.
