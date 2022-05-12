@@ -11,9 +11,11 @@
 *.lol
 *.lot
 _minted-ctufit-thesis/
+*.nav
 *.out
 *.pdf
 *.ps
 *.run.xml
+*.snm
 *.synctex.gz
 *.toc

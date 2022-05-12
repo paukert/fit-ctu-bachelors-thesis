@@ -1,0 +1,140 @@
+\documentclass[aspectratio=169]{beamer}
+
+\definecolor{confirm-gray}{RGB}{126, 126, 126}
+
+\mode<presentation>
+{
+    \usetheme{Madrid}
+    \usecolortheme{default}
+    \setbeamercovered{transparent}
+}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=25pt, text margin right=25pt}
+
+\usepackage[czech]{babel}
+\usepackage[export]{adjustbox}
+
+\title{Systém pro sportovní kluby}
+\author{Lukáš Paukert}
+
+\institute[]{
+    Vedoucí práce: Ing. Filip Glazar\\
+    \vspace{20pt}
+    Fakulta informačních technologií\\
+    České vysoké učení technické v Praze
+}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Motivace}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth, cfbox=lightgray 0.5pt 5pt]{images/kuoris.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Zadání}
+    \begin{itemize}
+        \item navrhnout a implementovat webovou aplikaci pro sportovní kluby
+        \item evidence a správa uživatelů a událostí
+        \item propojení s informačním systémem ORIS
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Technologie}
+    \begin{itemize}
+        \item výběr podřízen aktuálně využívaným hostingovým službám
+        \item vybrané technologie
+        \begin{itemize}
+            \item PHP
+            \item Symfony
+            \item MariaDB
+            \item Bootstrap
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Implementace}{ORIS API}
+    \begin{itemize}
+        \item komunikace pomocí \texttt{GET} požadavků s minimálně 2 query parametry
+        \begin{itemize}
+            \item \texttt{format}
+            \item \texttt{method}
+        \end{itemize}
+        \item v současné době je podporováno 28 různých metod
+        \item ve vytvořené aplikaci se využívají 3 metody
+        \begin{itemize}
+            \item \texttt{getEvent}
+            \item \texttt{getEventList}
+            \item \texttt{createEntry}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Implementace}{Formuláře}
+    \begin{figure}
+        \includegraphics[width=0.7\linewidth, cfbox=lightgray 0.5pt 5pt]{images/categories.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Implementace}{Responzivní design}
+    \begin{figure}[h]
+        \hfill
+        \begin{minipage}[b]{0.3\linewidth}
+            \includegraphics[width=0.9\linewidth, cfbox=lightgray 0.5pt 0pt]{images/homepage.pdf}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.3\linewidth}
+            \includegraphics[width=0.9\linewidth, cfbox=lightgray 0.5pt 0pt]{images/add-race.pdf}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.3\linewidth}
+            \includegraphics[width=0.9\linewidth, cfbox=confirm-gray 0.5pt 0pt]{images/confirm-dialog.pdf}
+        \end{minipage}
+        \hfill
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Závěr}
+    \begin{itemize}
+        \item všechny cíle byly splněny
+        \item aplikace je připravena pro nasazení
+        \item možná vylepšení
+        \begin{itemize}
+            \item e-mailové notifikace při přidání nové události
+            \item pokročilejší propojení s IS ORIS
+            \item zobrazování statistik pro trenéry a administrátory
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Děkuji za pozornost.
+\end{frame}
+
+\appendix
+
+% TODO
+% \begin{frame}{Otázky oponenta}
+%     Otázka
+%     Odpověď
+% \end{frame}
+
+\end{document}
