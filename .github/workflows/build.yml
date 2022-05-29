@@ -19,6 +19,9 @@ jobs:
       - name: Build Thesis
         run: latexmk -pdfxe -shell-escape ctufit-thesis.tex
 
+      - name: Build Presentation
+        run: latexmk -pdfxe -cd presentation/presentation.tex
+
       - name: Build Covers
         run: |
           latexmk -pdf -cd covers/cover.tex
@@ -27,6 +30,7 @@ jobs:
       - name: Rename PDF Files
         run: |
           mv ctufit-thesis.pdf bp-paukert.pdf
+          mv presentation/presentation.pdf bp-paukert-presentation.pdf
           mv covers/cover.pdf bp-paukert-desky.pdf
           mv covers/cover-inverse-colours.pdf bp-paukert-desky-invert-barvy.pdf
 
