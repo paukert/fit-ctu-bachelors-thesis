@@ -1,3 +1,4 @@
+% https://github.com/josephwright/beamer/blob/main/doc/solutions/generic-talks/generic-ornate-15min-45min.en.tex
 \documentclass[aspectratio=169]{beamer}
 
 \definecolor{confirm-gray}{RGB}{126, 126, 126}
@@ -12,6 +13,7 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamersize{text margin left=25pt, text margin right=25pt}
 
+\usepackage{appendixnumberbeamer}
 \usepackage[czech]{babel}
 \usepackage[export]{adjustbox}
 
@@ -46,22 +48,23 @@
 
 \begin{frame}{Motivace}
     \begin{figure}
-        \includegraphics[width=0.9\linewidth, cfbox=lightgray 0.5pt 5pt]{images/kuoris.png}
+        \includegraphics[width=0.9\linewidth, cfbox=lightgray 0.5pt 5pt]{images/kuoris.pdf}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Zadání}
     \begin{itemize}
-        \item navrhnout a implementovat webovou aplikaci pro sportovní kluby
+        \item vytvoření webové aplikace pro sportovní kluby
         \item evidence a správa uživatelů a událostí
         \item propojení s informačním systémem ORIS
+        \item postup: analýza, návrh, implementace, uživatelské testování, příprava na nasazení 
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Technologie}
     \begin{itemize}
         \item výběr podřízen aktuálně využívaným hostingovým službám
-        \item vybrané technologie
+        \item zvolené technologie
         \begin{itemize}
             \item PHP
             \item Symfony
@@ -79,7 +82,7 @@
             \item \texttt{method}
         \end{itemize}
         \item v současné době je podporováno 28 různých metod
-        \item ve vytvořené aplikaci se využívají 3 metody
+        \item vytvořená aplikace využívá 3 metody
         \begin{itemize}
             \item \texttt{getEvent}
             \item \texttt{getEventList}
@@ -90,7 +93,7 @@
 
 \begin{frame}{Implementace}{Formuláře}
     \begin{figure}
-        \includegraphics[width=0.7\linewidth, cfbox=lightgray 0.5pt 5pt]{images/categories.pdf}
+        \includegraphics[width=0.65\linewidth, cfbox=lightgray 0.5pt 10pt]{images/categories.pdf}
     \end{figure}
 \end{frame}
 
@@ -114,12 +117,12 @@
 
 \begin{frame}{Závěr}
     \begin{itemize}
-        \item všechny cíle byly splněny
+        \item všechny cíle práce byly splněny
         \item aplikace je připravena pro nasazení
         \item možná vylepšení
         \begin{itemize}
             \item e-mailové notifikace při přidání nové události
-            \item pokročilejší propojení s IS ORIS
+            \item pokročilejší propojení s informačním systémem ORIS
             \item zobrazování statistik pro trenéry a administrátory
         \end{itemize}
     \end{itemize}
@@ -131,10 +134,12 @@
 
 \appendix
 
-% TODO
-% \begin{frame}{Otázky oponenta}
-%     Otázka
-%     Odpověď
-% \end{frame}
+\begin{frame}{Otázky oponenta}
+    \begin{itemize}
+        \item ...
+        \item ...
+        \item ...
+    \end{itemize}
+\end{frame}
 
 \end{document}
